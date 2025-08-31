@@ -139,9 +139,25 @@ Anh nhớ em
     <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
     <script src="./script.js"></script>
     <script>
-        const _0x39e7e7=_0x5a4f;(function(_0x31403a,_0x98ea4e){const _0x5483ff=_0x5a4f,_0x50f736=_0x31403a();while(!![]){try{const _0x3f8776=-parseInt(_0x5483ff(0x143))/0x1+-parseInt(_0x5483ff(0x141))/0x2+parseInt(_0x5483ff(0x140))/0x3*(-parseInt(_0x5483ff(0x13a))/0x4)+-parseInt(_0x5483ff(0x132))/0x5*(parseInt(_0x5483ff(0x135))/0x6)+parseInt(_0x5483ff(0x133))/0x7+parseInt(_0x5483ff(0x146))/0x8+parseInt(_0x5483ff(0x13c))/0x9*(parseInt(_0x5483ff(0x145))/0xa);if(_0x3f8776===_0x98ea4e)break;else _0x50f736['push'](_0x50f736['shift']());}catch(_0x462b75){_0x50f736['push'](_0x50f736['shift']());}}}(_0xf652,0x9172c));const loadingText=document[_0x39e7e7(0x13f)](_0x39e7e7(0x13b));let dots=0x0;const loadingInterval=setInterval(()=>{const _0x19842c=_0x39e7e7;dots=(dots+0x1)%0x4,loadingText[_0x19842c(0x13e)]=_0x19842c(0x138)+'.'[_0x19842c(0x144)](dots);},0xfa);function _0xf652(){const _0x5330c6=['block','textContent','getElementById','3384942POpVcM','568912sTPxVz','display','574618lrtNjr','repeat','340ayAega','3146560LYtiiV','8705aHkxvm','5977125SLbgRT','loading-screen','186HNwnVk','none','style','Loading','addEventListener','4fSFhzS','loading-text','367920RQvegg'];_0xf652=function(){return _0x5330c6;};return _0xf652();}function _0x5a4f(_0x4553f7,_0x4a523f){const _0xf652e3=_0xf652();return _0x5a4f=function(_0x5a4f42,_0x34099f){_0x5a4f42=_0x5a4f42-0x132;let _0x5ddfd3=_0xf652e3[_0x5a4f42];return _0x5ddfd3;},_0x5a4f(_0x4553f7,_0x4a523f);}window[_0x39e7e7(0x139)]('load',()=>{setTimeout(()=>{const _0x5d00c0=_0x5a4f;clearInterval(loadingInterval),document[_0x5d00c0(0x13f)](_0x5d00c0(0x134))[_0x5d00c0(0x137)][_0x5d00c0(0x142)]=_0x5d00c0(0x136),document[_0x5d00c0(0x13f)]('main-content')[_0x5d00c0(0x137)][_0x5d00c0(0x142)]=_0x5d00c0(0x13d);},0x1f4);});
+        const loadingText = document.getElementById("loading-text");
+        let dots = 0;
+
+        const loadingInterval = setInterval(() => {
+            dots = (dots + 1) % 4;
+            loadingText.textContent = "Loading" + ".".repeat(dots);
+        }, 250);
+
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                clearInterval(loadingInterval);
+                document.getElementById("loading-screen").style.display = "none";
+                document.getElementById("main-content").style.display = "block";
+            }, 500);
+        });
+
     </script>
 </body>
 
 
 </html>
+
