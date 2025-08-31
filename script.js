@@ -343,7 +343,7 @@ const donateBtn = document.getElementById('donateBtn');
 const donateModal = document.getElementById('donateModal');
 const closeDonateModal = document.getElementById('closeDonateModal');
 const donateQRImg = document.getElementById('donateQRImg');
-const qrDonateLink = 'https://github.com/Panbap/anh/blob/main/qr1.png?raw=true';
+const qrDonateLink = 'https://files.catbox.moe/gt5se9.png';
 
 donateBtn.addEventListener('click', () => {
     donateQRImg.src = qrDonateLink;
@@ -361,7 +361,7 @@ donateModal.addEventListener('click', event => {
 });
 
 // Set placeholder text
-document.getElementById('imageLinks').placeholder = 'Ví dụ:\nhttps://panbap/image1.png\nhttps://panbap/image2.png\nNhập 1 chữ bất kỳ để bỏ qua ảnh';
+document.getElementById('imageLinks').placeholder = 'Ví dụ:\nhttps://example.com/image1.png\nhttps://example.com/image2.png\nNhập 1 chữ bất kỳ để bỏ qua ảnh';
 
 // Encoding and decoding functions for URL sharing
 const encodeData = data => btoa(encodeURIComponent(data).replace(/%(\w{2})/g, (match, hex) => String.fromCharCode('0x' + hex))).replace(/[+/=]/g, char => ({'+': '-', '/': '_', '=': ''}[char] || ''));
@@ -727,7 +727,7 @@ function updateShareLink(textLines, imageLinks, music) {
     const data = {textLines, imageLinks, music};
     const jsonString = JSON.stringify(data);
     const encoded = encodeData(jsonString);
-    const url = new URL(location.origin + '/Textlove/index.html');
+    const url = new URL(location.origin + '/ngyt.html');
     url.hash = 'id=' + encoded;
     
     shareLinkEl.href = url.toString();
@@ -945,7 +945,7 @@ startBtn.addEventListener('click', () => {
     const shareData = {textLines, imageLinks: images, music: selectedMusic};
     const jsonString = JSON.stringify(shareData);
     const encoded = encodeData(jsonString);
-    const shareUrl = new URL(location.origin + '/Textlove/index.html');
+    const shareUrl = new URL(location.origin + '/ngyt.html');
     shareUrl.hash = 'id=' + encoded;
     
     shareLinkEl.style.display = 'none';
@@ -1006,7 +1006,7 @@ async function drawHeartAndQRCode(url) {
     
     // Load heart image
     const heartImg = new Image();
-    heartImg.src = './assets/heart1.png';
+    heartImg.src = 'http://dkupload.site/uploads/files-1756619473480-231940394.png';
     await new Promise((resolve, reject) => {
         heartImg.onload = resolve;
         heartImg.onerror = reject;
