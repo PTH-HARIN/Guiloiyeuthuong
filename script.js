@@ -1,1 +1,1279 @@
-const _0x1840d6=_0x5360;(function(_0x6bbb5,_0x4ed534){const _0x25966d=_0x5360,_0xa5a07e=_0x6bbb5();while(!![]){try{const _0x16a719=-parseInt(_0x25966d(0x12b))/0x1+parseInt(_0x25966d(0xba))/0x2*(-parseInt(_0x25966d(0x15b))/0x3)+-parseInt(_0x25966d(0x107))/0x4+parseInt(_0x25966d(0xb2))/0x5+-parseInt(_0x25966d(0xf5))/0x6*(parseInt(_0x25966d(0x14d))/0x7)+-parseInt(_0x25966d(0xff))/0x8+-parseInt(_0x25966d(0x122))/0x9*(-parseInt(_0x25966d(0xea))/0xa);if(_0x16a719===_0x4ed534)break;else _0xa5a07e['push'](_0xa5a07e['shift']());}catch(_0x2773a8){_0xa5a07e['push'](_0xa5a07e['shift']());}}}(_0x2a43,0x4e650));const style=document[_0x1840d6(0xa2)](_0x1840d6(0x11a));style[_0x1840d6(0x15d)]=_0x1840d6(0x141),document[_0x1840d6(0xcd)][_0x1840d6(0xcc)](style);const donateBtn=document[_0x1840d6(0xa1)]('donateBtn'),donateModal=document[_0x1840d6(0xa1)]('donateModal'),closeDonateModal=document[_0x1840d6(0xa1)](_0x1840d6(0x152)),donateQRImg=document[_0x1840d6(0xa1)](_0x1840d6(0x14c)),qrDonateLink='https://github.com/Panbap/anh/blob/main/qr1.png?raw=true';donateBtn[_0x1840d6(0x160)](_0x1840d6(0x14f),()=>{const _0x4ebb48=_0x1840d6;donateQRImg[_0x4ebb48(0x8e)]=qrDonateLink,donateModal['style'][_0x4ebb48(0x146)]=_0x4ebb48(0xc3);}),closeDonateModal[_0x1840d6(0x160)](_0x1840d6(0x14f),()=>{const _0x531eec=_0x1840d6;donateModal[_0x531eec(0x11a)]['display']='none';}),donateModal[_0x1840d6(0x160)](_0x1840d6(0x14f),_0x452d6f=>{const _0x205efd=_0x1840d6;_0x452d6f[_0x205efd(0xf7)]===donateModal&&(donateModal[_0x205efd(0x11a)][_0x205efd(0x146)]=_0x205efd(0x13f));}),document[_0x1840d6(0xa1)](_0x1840d6(0xca))[_0x1840d6(0x97)]=_0x1840d6(0x12e);const encodeData=_0x3a0764=>btoa(encodeURIComponent(_0x3a0764)[_0x1840d6(0xe2)](/%(\w{2})/g,(_0x454942,_0x2e7ee3)=>String[_0x1840d6(0xd8)]('0x'+_0x2e7ee3)))[_0x1840d6(0xe2)](/[+/=]/g,_0x1ff1f5=>({'+':'-','/':'_','=':''}[_0x1ff1f5]||'')),decodeData=_0x4eee=>{const _0x2accfe=_0x1840d6;for(_0x4eee=_0x4eee['replace'](/[-_]/g,_0x41df2e=>({'-':'+','_':'/'}[_0x41df2e]));_0x4eee[_0x2accfe(0xa9)]%0x4;)_0x4eee+='=';return decodeURIComponent(atob(_0x4eee)[_0x2accfe(0xfc)]('')['map'](_0x26e112=>'%'+_0x26e112[_0x2accfe(0x145)](0x0)[_0x2accfe(0x13e)](0x10)[_0x2accfe(0x155)](0x2,'0'))[_0x2accfe(0xe3)](''));};function getDataFromURL(){const _0x143f08=_0x1840d6;if(location[_0x143f08(0xde)][_0x143f08(0x115)]('#id=')){const _0x457a42=location[_0x143f08(0xde)][_0x143f08(0x144)](0x4),_0x1748e4=decodeData(_0x457a42);if(_0x1748e4)try{return JSON[_0x143f08(0xaa)](_0x1748e4);}catch(_0x23850e){return console[_0x143f08(0x10b)](_0x143f08(0x156),_0x23850e),null;}}return null;}const inputTextEl=document[_0x1840d6(0xa1)](_0x1840d6(0x101)),imageLinksEl=document[_0x1840d6(0xa1)](_0x1840d6(0xca)),startBtn=document[_0x1840d6(0xa1)](_0x1840d6(0x8a)),shareLinkEl=document[_0x1840d6(0xa1)](_0x1840d6(0xe7)),qrBtn=document['getElementById']('qrBtn'),heartFrame=document[_0x1840d6(0xed)](_0x1840d6(0x114)),canvas=document[_0x1840d6(0xa1)](_0x1840d6(0x157)),ctx=canvas[_0x1840d6(0x117)]('2d'),musicSelector=document[_0x1840d6(0xa1)](_0x1840d6(0xf0));let audio=null;function waitUserToStartMusic(_0x36e2ca){const _0x1794c6=_0x1840d6,_0x54cd45=()=>{const _0x449c31=_0x5360;playMusic(_0x36e2ca),document[_0x449c31(0x9e)](_0x449c31(0x14f),_0x54cd45),document[_0x449c31(0x9e)]('touchstart',_0x54cd45);};document[_0x1794c6(0x160)](_0x1794c6(0x14f),_0x54cd45),document[_0x1794c6(0x160)](_0x1794c6(0xfb),_0x54cd45);}function playMusic(_0xb8101c){const _0x256bd9=_0x1840d6;audio&&(audio[_0x256bd9(0x12a)](),audio=null),_0xb8101c&&(audio=new Audio(_0xb8101c),audio[_0x256bd9(0x11c)]=!0x0,audio['volume']=0.5,audio[_0x256bd9(0xbd)]()[_0x256bd9(0x10e)](_0x4bcc3e=>{const _0x1e2bed=_0x256bd9;console['warn'](_0x1e2bed(0x103),_0x4bcc3e);}));}function updateURLParam(_0x491d23,_0x5394c3){const _0x179463=_0x1840d6,_0x34541a=new URL(window[_0x179463(0x111)]);_0x5394c3?_0x34541a[_0x179463(0x13d)][_0x179463(0xdb)](_0x491d23,_0x5394c3):_0x34541a[_0x179463(0x13d)]['delete'](_0x491d23),window[_0x179463(0x13b)][_0x179463(0x8f)]({},'',_0x34541a);}musicSelector[_0x1840d6(0x160)](_0x1840d6(0x119),()=>{const _0x1962d8=_0x1840d6,_0x26faa7=musicSelector[_0x1962d8(0xc8)];updateURLParam('music',_0x26faa7),playMusic(_0x26faa7);}),window[_0x1840d6(0x160)](_0x1840d6(0xf4),()=>{const _0x2c6839=_0x1840d6,_0x355817=getDataFromURL();_0x355817&&_0x355817['music']&&(musicSelector[_0x2c6839(0xc8)]=_0x355817[_0x2c6839(0x116)],waitUserToStartMusic(_0x355817['music']));});let images=[],textLines=[];const scene=new THREE[(_0x1840d6(0xad))](),camera=new THREE[(_0x1840d6(0x8c))](0x4b,window[_0x1840d6(0x84)]/window['innerHeight'],0.1,0xbb8);camera[_0x1840d6(0x13a)]['z']=0x190;const renderer=new THREE['WebGLRenderer']({'antialias':!0x0,'alpha':!0x0});renderer['setPixelRatio'](window[_0x1840d6(0x11d)]),renderer[_0x1840d6(0xe0)](window[_0x1840d6(0x84)],window[_0x1840d6(0xc1)]),document[_0x1840d6(0xe1)][_0x1840d6(0xcc)](renderer[_0x1840d6(0x10f)]);const starGeo=new THREE[(_0x1840d6(0x135))](),starCount=0x320,starPos=[];for(let e=0x0;e<0x320;e++){const e=THREE[_0x1840d6(0xa4)][_0x1840d6(0x128)](0x384,0x4b0),n=Math[_0x1840d6(0x98)](THREE[_0x1840d6(0xa4)][_0x1840d6(0xb8)](0x2)),t=THREE[_0x1840d6(0xa4)][_0x1840d6(0xb8)](0x2*Math['PI']);starPos[_0x1840d6(0x106)](e*Math[_0x1840d6(0x129)](n)*Math['cos'](t),e*Math[_0x1840d6(0x129)](n)*Math['sin'](t),e*Math[_0x1840d6(0x120)](n));}starGeo[_0x1840d6(0xf6)](_0x1840d6(0x13a),new THREE[(_0x1840d6(0xc2))](starPos,0x3));const starsMat=new THREE[(_0x1840d6(0xf3))]({'color':0xffffff,'size':0x5,'transparent':!0x0,'opacity':0.9});scene[_0x1840d6(0x94)](new THREE[(_0x1840d6(0x125))](starGeo,starsMat));const starPositions=[];for(let e=0x0;e<0x320;e++)starPositions[_0x1840d6(0x106)](new THREE[(_0x1840d6(0xdc))](starPos[0x3*e],starPos[0x3*e+0x1],starPos[0x3*e+0x2]));const shootingStars=[],shootingStarCount=0x5;for(let e=0x0;e<0x5;e++){const e=new THREE['BufferGeometry'](),n=new Float32Array(0x1e);e[_0x1840d6(0xf6)](_0x1840d6(0x13a),new THREE[(_0x1840d6(0xbf))](n,0x3));const t=new THREE[(_0x1840d6(0x15a))]({'color':0xffffff,'transparent':!0x0,'opacity':0.9}),o=new THREE[(_0x1840d6(0xb7))](e,t),a=new THREE[(_0x1840d6(0xdc))](THREE[_0x1840d6(0xa4)]['randFloatSpread'](0x3e8),THREE[_0x1840d6(0xa4)]['randFloat'](0x190,0x2bc),THREE['MathUtils'][_0x1840d6(0xb8)](0x3e8)),i=new THREE[(_0x1840d6(0xdc))](0.8,-0x1,0.2)[_0x1840d6(0xf2)]()[_0x1840d6(0x14e)](0x5+0x5*Math[_0x1840d6(0x15e)]());shootingStars[_0x1840d6(0x106)]({'line':o,'positions':n,'pos':a,'velocity':i}),scene['add'](o);}const shootingStarsFromStars=[],shootingStarCountFromStars=0x1e;for(let e=0x0;e<0x1e;e++){const e=new THREE[(_0x1840d6(0x135))](),n=new Float32Array(0x1e);e[_0x1840d6(0xf6)](_0x1840d6(0x13a),new THREE[(_0x1840d6(0xbf))](n,0x3));const t=new THREE['LineBasicMaterial']({'color':0xffffff,'transparent':!0x0,'opacity':0.9}),o=new THREE[(_0x1840d6(0xb7))](e,t),a=Math[_0x1840d6(0x118)](Math['random']()*starPositions[_0x1840d6(0xa9)]),i=starPositions[a]['clone'](),r=i[_0x1840d6(0x104)]()[_0x1840d6(0xf2)]()[_0x1840d6(0x104)]()[_0x1840d6(0x94)](new THREE[(_0x1840d6(0xdc))](THREE[_0x1840d6(0xa4)]['randFloatSpread'](0.5),THREE[_0x1840d6(0xa4)][_0x1840d6(0xb8)](0.5),THREE['MathUtils'][_0x1840d6(0xb8)](0.5)))['normalize']()['multiplyScalar'](0x5+0x5*Math['random']());shootingStarsFromStars[_0x1840d6(0x106)]({'line':o,'positions':n,'pos':i,'velocity':r}),scene[_0x1840d6(0x94)](o);}images=[];const textureLoader=new THREE[(_0x1840d6(0x14a))](),group=new THREE[(_0x1840d6(0xab))]();function randomPosOnSphere(_0xfe649a){const _0x4abda9=_0x1840d6,_0x18698f=Math[_0x4abda9(0x98)](THREE['MathUtils'][_0x4abda9(0xb8)](0x2)),_0x5d56cd=THREE[_0x4abda9(0xa4)][_0x4abda9(0xb8)](0x2*Math['PI']);return new THREE[(_0x4abda9(0xdc))](_0xfe649a*Math['sin'](_0x18698f)*Math['cos'](_0x5d56cd),_0xfe649a*Math['sin'](_0x18698f)*Math['sin'](_0x5d56cd),_0xfe649a*Math[_0x4abda9(0x120)](_0x18698f));}function createTextSprite(_0xf4319){const _0x3d452b=_0x1840d6,_0x459214=document['createElement'](_0x3d452b(0xd9));_0x459214[_0x3d452b(0xfd)]=0x200,_0x459214['height']=0x80;const _0x33dd58=_0x459214[_0x3d452b(0x117)]('2d'),_0x26f208=['#ff8690',_0x3d452b(0xac),'#63c7c7'],_0x5cb2b1=['#cfd8dc','#cfd8dc',_0x3d452b(0x12c)];let _0x2ba692=0x0;const _0x2e835f=new THREE['CanvasTexture'](_0x459214);_0x2e835f[_0x3d452b(0xc4)]=THREE[_0x3d452b(0x7f)];const _0x4b88bc=new THREE[(_0x3d452b(0xee))]({'map':_0x2e835f,'transparent':!0x0,'emissive':new THREE[(_0x3d452b(0x109))](0xbfe6ff),'emissiveIntensity':1.5}),_0x5a02dc=new THREE[(_0x3d452b(0xa3))](_0x4b88bc);function _0x3946db(){const _0x4ef24e=_0x3d452b;_0x33dd58['clearRect'](0x0,0x0,_0x459214[_0x4ef24e(0xfd)],_0x459214['height']),_0x33dd58[_0x4ef24e(0x10d)]='bold\x2072px\x20Playpen\x20Sans',_0x33dd58[_0x4ef24e(0x139)]='center',_0x33dd58[_0x4ef24e(0x150)]=_0x4ef24e(0xb4),_0x33dd58[_0x4ef24e(0x126)]=_0x26f208[_0x2ba692],_0x33dd58[_0x4ef24e(0x93)]=0x2,_0x33dd58[_0x4ef24e(0xb1)]=_0x5cb2b1[_0x2ba692],_0x33dd58[_0x4ef24e(0x161)](_0xf4319,0x100,0x40),_0x33dd58[_0x4ef24e(0xf1)](_0xf4319,0x100,0x40),_0x2e835f[_0x4ef24e(0xa7)]=!0x0;}return _0x5a02dc[_0x3d452b(0x10c)][_0x3d452b(0xdb)](0x96,0x28,0x1),_0x3946db(),setInterval(()=>{_0x2ba692=(_0x2ba692+0x1)%_0x26f208['length'],_0x3946db();},0x2710),document[_0x3d452b(0x82)][_0x3d452b(0xf4)]('48px\x20Playpen\x20Sans')[_0x3d452b(0x131)](()=>{_0x3946db();}),_0x5a02dc;}scene[_0x1840d6(0x94)](group);const planes=[],labels=[],imagePositions=[],textPositions=[],boxCount=0x32,radiusImage=0x190,radiusText=0x258;function initScene(){const _0x39f4ed=_0x1840d6;if(group[_0x39f4ed(0xc7)](),planes[_0x39f4ed(0xa9)]=0x0,labels[_0x39f4ed(0xa9)]=0x0,imagePositions[_0x39f4ed(0xa9)]=0x0,textPositions[_0x39f4ed(0xa9)]=0x0,0x0!==images[_0x39f4ed(0xa9)]&&0x0!==textLines['length']){for(let _0x5322bb=0x0;_0x5322bb<boxCount;_0x5322bb++){const _0x40df3b=0x14+0xa*Math['random'](),_0x677cd1=new THREE[(_0x39f4ed(0xc0))](_0x40df3b,_0x40df3b),_0x42de33=textureLoader[_0x39f4ed(0xf4)](images[_0x5322bb%images[_0x39f4ed(0xa9)]],_0x450b9a=>{const _0x4430d1=_0x39f4ed;_0x450b9a['minFilter']=THREE[_0x4430d1(0xd5)],_0x450b9a[_0x4430d1(0xe9)]=THREE[_0x4430d1(0x7f)],_0x450b9a['anisotropy']=renderer[_0x4430d1(0xb9)][_0x4430d1(0xa5)]();}),_0x343b4f=new THREE[(_0x39f4ed(0x100))]({'map':_0x42de33,'transparent':!0x0}),_0x14af40=new THREE['Mesh'](_0x677cd1,_0x343b4f),_0xdb8ea=randomPosOnSphere(radiusImage);imagePositions[_0x39f4ed(0x106)](_0xdb8ea),_0x14af40[_0x39f4ed(0x13a)][_0x39f4ed(0xdb)](0x0,0x0,0x0),_0x14af40['scale'][_0x39f4ed(0xdb)](0.05,0.05,0.05),_0x14af40['userData']={'progress':0x0,'speed':0.0005+0.001*Math['random'](),'delayOffset':0.02*_0x5322bb},group[_0x39f4ed(0x94)](_0x14af40),planes[_0x39f4ed(0x106)](_0x14af40);}for(let _0x5eacb2=0x0;_0x5eacb2<0x2*boxCount;_0x5eacb2++){const _0x5262aa=createTextSprite(textLines[_0x5eacb2%textLines['length']]),_0x11b447=randomPosOnSphere(radiusText);textPositions[_0x39f4ed(0x106)](_0x11b447),_0x5262aa[_0x39f4ed(0x13a)][_0x39f4ed(0xdb)](0x0,0x0,0x0),_0x5262aa['scale'][_0x39f4ed(0xdb)](1.5,0.4,0x1),_0x5262aa['userData']={'progress':0x0,'speed':0.0005+0.001*Math[_0x39f4ed(0x15e)](),'delayOffset':0.02*_0x5eacb2},scene[_0x39f4ed(0x94)](_0x5262aa),labels[_0x39f4ed(0x106)](_0x5262aa);}}}function _0x2a43(){const _0x28205e=['fillRect','clear','value','#id=','imageLinks','speed','appendChild','head','ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789','captcha-input','toDataURL','stringify','pathname','upload-imgbb','trim','LinearMipMapLinearFilter','updateProjectionMatrix','assign','fromCharCode','canvas','message','set','Vector3','files','hash','https://api.imgbb.com/1/upload?key=','setSize','body','replace','join','visible','downloadBtn','preventDefault','shareLink','mousemove','magFilter','15814850xdYEnZ','maxWidth','title','querySelector','SpriteMaterial','focus','musicSelector','fillText','normalize','PointsMaterial','load','3678nKUygI','setAttribute','target','geometry','height','positions','touchstart','split','width','captcha-code','1171656WajrnH','MeshBasicMaterial','inputText','origin','Không\x20thể\x20phát\x20nhạc\x20tự\x20động:','clone','key','push','771652cLrCkf','Nhạc\x20từ\x20URL:','Color','download','error','scale','font','catch','domElement','id=','location','onerror','Upload\x20ảnh\x20thất\x20bại:\x20','.heart-frame','startsWith','music','getContext','floor','change','style','Hệ\x20thống\x20đang\x20cập\x20nhật','loop','devicePixelRatio','image','YTI0NTMxMjYyYmYxN2Y2M2EzZmFkNmJlZDNlM2Y4MDg=','cos','lerpVectors','9mAKVEZ','href','touchmove','Points','fillStyle','line','randFloat','sin','pause','212867KSdiEa','#cfd8dc','material','Ví\x20dụ:\x20\x0ahttps://panbap/image1.png\x0ahttps://panbap/image2.png\x0aNhập\x201\x20chữ\x20bất\x20kỳ\x20để\x20bỏ\x20qua\x20ảnh','keydown','dispose','then','/Textlove/index.html','Vui\x20lòng\x20nhập\x20CAPTCHA','toCanvas','BufferGeometry','textLines','100vw','attributes','textAlign','position','history','render','searchParams','toString','none','rgba(20,\x2020,\x2020,\x200.97)','\x0a\x20\x20\x20\x20\x20\x20\x20\x20html,\x0a\x20\x20\x20\x20\x20\x20\x20\x20body\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20height:\x20100%;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin:\x200;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20flex;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20justify-content:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20align-items:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20linear-gradient(135deg,\x20#1e2a38,\x20#16202b);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#cfd8dc;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-family:\x20\x22Playpen\x20Sans\x22,\x20cursive;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20overflow:\x20hidden;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#ui\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20position:\x20fixed;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20top:\x2050%;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20left:\x2050%;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20width:\x20320px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20transform:\x20translate(-50%,\x20-50%);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2015px\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x2012px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20z-index:\x201000;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20backdrop-filter:\x20blur(8px);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20box-sizing:\x20border-box;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20max-height:\x2090vh;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20overflow-y:\x20scroll;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20scrollbar-width:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20-ms-overflow-style:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#ui::-webkit-scrollbar\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#ui\x20label\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-weight:\x20600;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2015px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20block;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:\x206px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#ui\x20textarea\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20width:\x2095%;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20height:\x2070px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:\x2012px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20#1b1b1b;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border:\x201px\x20solid\x20#3d3d3d;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#ddd;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2014px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20resize:\x20vertical;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2010px\x2012px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x208px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-family:\x20\x22Courier\x20New\x22,\x20Courier,\x20monospace;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20transition:\x20border-color\x200.3s\x20ease;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#ui\x20textarea:focus\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-color:\x20#66aaff;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20outline:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20#222;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#ui\x20h1\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20text-align:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#musicSelector\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20width:\x20100%;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2010px\x2014px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2015px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x2012px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20#223344;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#e0e6f3;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20text-align-last:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20text-align:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20box-shadow:\x20inset\x200\x200\x2010px\x20rgba(0,\x200,\x200,\x200.6);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin-bottom:\x2015px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20cursor:\x20pointer;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20transition:\x20background-color\x200.3s\x20ease;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#musicSelector:hover\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#2a3b56;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#buttonContainer\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20flex;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20gap:\x2012px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#startBtn,\x0a\x20\x20\x20\x20\x20\x20\x20\x20#qrBtn\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-family:\x20\x22Playpen\x20Sans\x22,\x20cursive;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20flex:\x201;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2012px\x200;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20#4a90e2;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20white;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-weight:\x20700;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2017px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20cursor:\x20pointer;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x2010px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20box-shadow:\x200\x205px\x2015px\x20rgba(74,\x20144,\x20226,\x200.6);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20transition:\x20background-color\x200.3s\x20ease,\x20box-shadow\x200.3s\x20ease;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#startBtn:hover\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20#6aa0ff;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20box-shadow:\x200\x208px\x2025px\x20rgba(106,\x20160,\x20255,\x200.8);\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#shareLink\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20inline-block;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20max-width:\x20250px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20white-space:\x20nowrap;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20overflow:\x20hidden;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20text-overflow:\x20ellipsis;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20vertical-align:\x20bottom;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#42a5f5;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20cursor:\x20pointer;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20text-decoration:\x20underline;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2015px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20user-select:\x20all;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin-top:\x2010px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20text-align:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.heart-frame\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20position:\x20relative;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20/*\x20width:\x20320px;\x20*/\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20/*\x20height:\x20296px;\x20*/\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin:\x2020px\x20auto;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#finalCanvas\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20cursor:\x20pointer;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20block;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin:\x200\x20auto;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x2012px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20box-shadow:\x200\x200\x208px\x20rgba(0,\x200,\x200,\x200.1);\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.info-text\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20text-align:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#ff679a;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2012px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin-top:\x205px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20textarea\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20width:\x20300px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20height:\x20150px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2010px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2016px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border:\x201px\x20solid\x20#cccccc00;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x205px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20resize:\x20both;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20textarea::-webkit-scrollbar\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20width:\x2010px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20height:\x2010px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20textarea::-webkit-scrollbar-thumb\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#888;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x205px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border:\x202px\x20solid\x20#ffffff00;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20textarea::-webkit-scrollbar-thumb:hover\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#555;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20textarea::-webkit-scrollbar-track\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#f1f1f100;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x205px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20.custom-upload-button\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-family:\x20\x22Playpen\x20Sans\x22,\x20cursive;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20block;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin:\x2010px\x20auto;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2012px\x2024px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#4a90e2;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20white;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x206px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-weight:\x20bold;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2016px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20cursor:\x20pointer;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20transition:\x20background-color\x200.3s\x20ease;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20box-shadow:\x200\x204px\x2010px\x20rgba(0,\x200,\x200,\x200.1);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20user-select:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20text-align:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20width:\x2040%;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#downloadBtn\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-family:\x20\x22Playpen\x20Sans\x22,\x20cursive;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20block;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin:\x2012px\x20auto\x200\x20auto;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#ff7094;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#fff;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2010px\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2016px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-weight:\x20bold;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x208px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20cursor:\x20pointer;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20box-shadow:\x200\x204px\x208px\x20rgba(0,\x200,\x200,\x200.1);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20transition:\x20background-color\x200.3s\x20ease,\x20transform\x200.2s\x20ease;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#downloadBtn:hover\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#ff5682;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20transform:\x20translateY(-2px);\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#downloadBtn:active\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20transform:\x20scale(0.98);\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#captcha-popup\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20position:\x20fixed;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20top:\x200;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20left:\x200;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20right:\x200;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20bottom:\x200;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20rgba(0,\x200,\x200,\x200.5);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20align-items:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20justify-content:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20z-index:\x209999;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#captcha-popup>div\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20white;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2025px\x2030px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x2010px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20max-width:\x20320px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20width:\x2090%;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20text-align:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20box-shadow:\x200\x205px\x2015px\x20rgba(0,\x200,\x200,\x200.3);\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#captcha-code\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-family:\x20\x22Playpen\x20Sans\x22,\x20cursive;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2028px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-weight:\x20bold;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20letter-spacing:\x205px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20#4a90e2;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2010px\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20user-select:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x206px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#refresh-captcha\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin-left:\x2010px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x206px\x2012px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x206px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20#4a90e2;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20white;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20cursor:\x20pointer;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#captcha-input\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20width:\x20100%;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2010px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2016px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border:\x201px\x20solid\x20#4a90e2;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x206px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin-top:\x2015px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20box-sizing:\x20border-box;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#captcha-error\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20red;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin-top:\x2010px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20min-height:\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#captcha-submit\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin-top:\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background:\x20#4a90e2;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20white;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x206px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2010px\x2020px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-weight:\x20bold;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20cursor:\x20pointer;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-family:\x20\x22Playpen\x20Sans\x22,\x20cursive;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#loading-screen\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20position:\x20fixed;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20top:\x200;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20left:\x200;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20width:\x20100vw;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20height:\x20100vh;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#fff;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20flex;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20justify-content:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20align-items:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20z-index:\x209999;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2024px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#555;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20flex-direction:\x20column;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20/*\x20Nút\x20Donate\x20*/\x0a\x20\x20\x20\x20\x20\x20\x20\x20#donateBtn\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-family:\x20\x22Playpen\x20Sans\x22,\x20cursive;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20padding:\x2010px\x2024px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#ff7094;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20white;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border:\x20none;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20border-radius:\x208px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20cursor:\x20pointer;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-weight:\x20600;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2016px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20box-shadow:\x200\x204px\x2010px\x20rgba(255,\x20112,\x20148,\x200.5);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20transition:\x20background-color\x200.3s\x20ease,\x20box-shadow\x200.3s\x20ease;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20display:\x20block;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20margin:\x2010px\x20auto;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20width:\x20max-content;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20text-align:\x20center;\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20#donateBtn:hover\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20background-color:\x20#e85c7a;\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20box-shadow:\x200\x206px\x2015px\x20rgba(232,\x2092,\x20122,\x200.7);\x0a\x20\x20\x20\x20\x20\x20\x20\x20}\x0a','donateQR','removeChild','slice','charCodeAt','display','lookAt','velocity','POST','TextureLoader','filter','donateQRImg','7322bWfQtU','multiplyScalar','click','textBaseline','captcha-error','closeDonateModal','copy','Vui\x20lòng\x20nhập\x20ít\x20nhất\x20một\x20link\x20ảnh!','padStart','JSON\x20parse\x20error:','finalCanvas','Vui\x20lòng\x20nhập\x20ít\x20nhất\x20một\x20câu!','drawImage','LineBasicMaterial','15LFJAHG','aspect','innerHTML','random','pos','addEventListener','strokeText','delayOffset','LinearFilter','inline','image/png','fonts','append','innerWidth','label[for=\x22upload-imgbb\x22]','./assets/heart1.png','100%','captcha-popup','block','startBtn','touches','PerspectiveCamera','clientX','src','replaceState','Ảnh\x20lỗi,\x20hiển\x20thị\x20thông\x20báo\x20bảo\x20trì...','warn','data','lineWidth','add','progress','M23.6,0c-3.4,0-6.3,2.7-7.6,5.2C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4\x20c0,9.4,16,21.2,16,21.2s16-11.8,16-21.2C32,3.8,28.2,0,23.6,0z','placeholder','acos','textContent','forEach','charAt','userData','measureText','removeEventListener','log','clearRect','getElementById','createElement','Sprite','MathUtils','getMaxAnisotropy','anh_qr_traitim.png','needsUpdate','center','length','parse','Group','#76b776','Scene','success','auto','onload','strokeStyle','2207595YEBNuu','Chưa\x20có\x20link\x20để\x20tạo\x20QR!\x20Vui\x20lòng\x20tạo\x20link\x20trước.','middle','captcha-submit','fixed','Line','randFloatSpread','capabilities','203386snpnEq','inline-block','map','play','resize','BufferAttribute','PlaneGeometry','innerHeight','Float32BufferAttribute','flex','minFilter','#ff7094'];_0x2a43=function(){return _0x28205e;};return _0x2a43();}function updateLabelText(_0x4bf22,_0x73945){const _0x3cd1f4=_0x1840d6;if(_0x4bf22<0x0||_0x4bf22>=labels[_0x3cd1f4(0xa9)])return;const _0x2a3623=labels[_0x4bf22];if(_0x2a3623&&(scene['remove'](_0x2a3623),_0x2a3623['material'][_0x3cd1f4(0xbc)][_0x3cd1f4(0x130)](),_0x2a3623[_0x3cd1f4(0x12d)]['dispose']()),''===_0x73945[_0x3cd1f4(0xd4)]())return void(labels[_0x4bf22]=null);const _0x56d95b=createTextSprite(_0x73945);_0x56d95b[_0x3cd1f4(0x13a)][_0x3cd1f4(0x153)](textPositions[_0x4bf22]),scene['add'](_0x56d95b),labels[_0x4bf22]=_0x56d95b;}initScene();let targetRotX=0x0,targetRotY=0x0,currentRotX=0x0,currentRotY=0x0;const maxRotX=Math['PI']/0xb4*0x5a,maxRotY=0x2*Math['PI'];function _0x5360(_0x1850d7,_0x1d7762){const _0x2a4300=_0x2a43();return _0x5360=function(_0x5360fb,_0x5f17b6){_0x5360fb=_0x5360fb-0x7f;let _0x66e82a=_0x2a4300[_0x5360fb];return _0x66e82a;},_0x5360(_0x1850d7,_0x1d7762);}function updateTargetRotation(_0x508627,_0x1da5ac){const _0x2134bc=_0x1840d6,_0x5034b2=_0x508627/window[_0x2134bc(0x84)]*0x2-0x1,_0x4d17fd=_0x1da5ac/window[_0x2134bc(0xc1)]*0x2-0x1;targetRotY=_0x5034b2*maxRotY,targetRotX=_0x4d17fd*maxRotX;}function updateShareLink(_0x15a08f,_0x5ed635,_0x278e22){const _0x27f7ab=_0x1840d6,_0x3114ef={'textLines':_0x15a08f,'imageLinks':_0x5ed635,'music':_0x278e22},_0x84d1d9=JSON['stringify'](_0x3114ef),_0x172700=encodeData(_0x84d1d9),_0x59e0ff=new URL(location[_0x27f7ab(0x102)]+_0x27f7ab(0x132));_0x59e0ff[_0x27f7ab(0xde)]=_0x27f7ab(0x110)+_0x172700,shareLinkEl[_0x27f7ab(0x99)]=_0x59e0ff[_0x27f7ab(0x13e)](),shareLinkEl[_0x27f7ab(0x123)]=_0x59e0ff[_0x27f7ab(0x13e)](),shareLinkEl[_0x27f7ab(0xec)]='Click\x20để\x20mở\x20link\x20trong\x20tab\x20mới',shareLinkEl['style'][_0x27f7ab(0x146)]=_0x27f7ab(0xbb);}function loadFromURL(){const _0x18a998=_0x1840d6,_0x5431dc=getDataFromURL();if(!_0x5431dc)return!0x1;_0x5431dc[_0x18a998(0x136)]&&(textLines=_0x5431dc[_0x18a998(0x136)],inputTextEl[_0x18a998(0xc8)]=textLines[_0x18a998(0xe3)]('\x0a')),_0x5431dc[_0x18a998(0xca)]&&(images=_0x5431dc[_0x18a998(0xca)],imageLinksEl[_0x18a998(0xc8)]=images['join']('\x0a')),_0x5431dc[_0x18a998(0x116)]?(console[_0x18a998(0x9f)](_0x18a998(0x108),_0x5431dc[_0x18a998(0x116)]),musicSelector[_0x18a998(0xc8)]=_0x5431dc[_0x18a998(0x116)],playMusic(_0x5431dc[_0x18a998(0x116)])):console[_0x18a998(0x9f)]('Không\x20có\x20music\x20trong\x20data'),initScene();for(let _0x21c04d=0x0;_0x21c04d<0x2*planes['length'];_0x21c04d++){let _0x2848a3='';textLines[_0x18a998(0xa9)]>0x0&&(_0x2848a3=textLines[_0x21c04d%textLines[_0x18a998(0xa9)]]),updateLabelText(_0x21c04d,_0x2848a3);}return updateShareLink(textLines,images,_0x5431dc['music']),!0x0;}function animate(){const _0x2c5586=_0x1840d6;requestAnimationFrame(animate),currentRotX+=0.005*(targetRotX-currentRotX),currentRotY+=0.005*(targetRotY-currentRotY),(camera[_0x2c5586(0x13a)]['x']=0x258*Math['sin'](currentRotY)*Math['cos'](currentRotX),camera['position']['y']=0x258*Math[_0x2c5586(0x129)](currentRotX),camera[_0x2c5586(0x13a)]['z']=0x258*Math[_0x2c5586(0x120)](currentRotY)*Math[_0x2c5586(0x120)](currentRotX),camera[_0x2c5586(0x147)](0x0,0x0,0x0));const _0x54eb96=0x3e8;planes[_0x2c5586(0x9a)](_0x545a5d=>{const _0x418aec=_0x2c5586;_0x545a5d[_0x418aec(0x147)](camera['position']);}),planes[_0x2c5586(0x9a)]((_0x4d84fe,_0x565279)=>{const _0x4211a1=_0x2c5586;let _0x3db1f1=_0x4d84fe['userData'][_0x4211a1(0x95)]-_0x4d84fe[_0x4211a1(0x9c)][_0x4211a1(0x162)];_0x3db1f1<0x0?_0x3db1f1=0x0:_0x3db1f1>0x1&&(_0x3db1f1=0x1);const _0x3b4a8c=imagePositions[_0x565279][_0x4211a1(0x104)]();_0x3b4a8c['y']-=0x190;const _0xf56b71=new THREE[(_0x4211a1(0xdc))](_0x3b4a8c['x'],_0x54eb96,_0x3b4a8c['z']);_0x4d84fe['position'][_0x4211a1(0x121)](_0xf56b71,_0x3b4a8c,_0x3db1f1);let _0x47d9b4=0.05+1.95*_0x3db1f1;_0x4d84fe['scale']['set'](_0x47d9b4,_0x47d9b4,_0x47d9b4),_0x4d84fe['up'][_0x4211a1(0xdb)](0x0,0x1,0x0),_0x4d84fe['lookAt'](camera[_0x4211a1(0x13a)]),_0x4d84fe[_0x4211a1(0x9c)][_0x4211a1(0x95)]+=_0x4d84fe['userData'][_0x4211a1(0xcb)],_0x4d84fe[_0x4211a1(0x9c)][_0x4211a1(0x95)]>0x1+_0x4d84fe[_0x4211a1(0x9c)][_0x4211a1(0x162)]&&(_0x4d84fe[_0x4211a1(0x9c)]['progress']=0x0);const _0x3efaa0=labels[0x2*_0x565279];if(_0x3efaa0){_0x3efaa0['visible']=_0x3db1f1>0.05;const _0x23b771=textPositions[0x2*_0x565279]['clone']();_0x23b771['y']-=0x190;const _0x3775f3=new THREE['Vector3'](_0x23b771['x'],_0x54eb96,_0x23b771['z']);_0x3efaa0['position']['lerpVectors'](_0x3775f3,_0x23b771,_0x3db1f1);}const _0x286af1=labels[0x2*_0x565279+0x1];if(_0x286af1){_0x286af1[_0x4211a1(0xe4)]=_0x3db1f1>0.05;const _0x29a40b=textPositions[0x2*_0x565279+0x1][_0x4211a1(0x104)]();_0x29a40b['y']-=0x190;const _0xfa6c19=new THREE['Vector3'](_0x29a40b['x'],_0x54eb96,_0x29a40b['z']);_0x286af1['position'][_0x4211a1(0x121)](_0xfa6c19,_0x29a40b,_0x3db1f1);}}),shootingStars[_0x2c5586(0x9a)](_0x9a8c1c=>{const _0x25c14d=_0x2c5586;_0x9a8c1c[_0x25c14d(0x15f)][_0x25c14d(0x94)](_0x9a8c1c['velocity']);for(let _0x3a470a=0x0;_0x3a470a<0xa;_0x3a470a++){const _0x2a290e=0x3*_0x3a470a;_0x9a8c1c[_0x25c14d(0xfa)][_0x2a290e]=_0x9a8c1c[_0x25c14d(0x15f)]['x']-_0x9a8c1c[_0x25c14d(0x148)]['x']*_0x3a470a*0.8,_0x9a8c1c[_0x25c14d(0xfa)][_0x2a290e+0x1]=_0x9a8c1c[_0x25c14d(0x15f)]['y']-_0x9a8c1c[_0x25c14d(0x148)]['y']*_0x3a470a*0.8,_0x9a8c1c[_0x25c14d(0xfa)][_0x2a290e+0x2]=_0x9a8c1c[_0x25c14d(0x15f)]['z']-_0x9a8c1c[_0x25c14d(0x148)]['z']*_0x3a470a*0.8;}_0x9a8c1c[_0x25c14d(0x127)][_0x25c14d(0xf8)][_0x25c14d(0x138)][_0x25c14d(0x13a)][_0x25c14d(0xa7)]=!0x0,_0x9a8c1c[_0x25c14d(0x15f)]['y']<-0x1f4&&_0x9a8c1c['pos']['set'](THREE[_0x25c14d(0xa4)][_0x25c14d(0xb8)](0x3e8),THREE[_0x25c14d(0xa4)][_0x25c14d(0x128)](0x190,0x2bc),THREE[_0x25c14d(0xa4)][_0x25c14d(0xb8)](0x3e8));}),shootingStarsFromStars[_0x2c5586(0x9a)](_0x189593=>{const _0x1094ea=_0x2c5586;_0x189593['pos']['add'](_0x189593[_0x1094ea(0x148)]);for(let _0x26d1f1=0x0;_0x26d1f1<0xa;_0x26d1f1++){const _0x425c10=0x3*_0x26d1f1;_0x189593[_0x1094ea(0xfa)][_0x425c10]=_0x189593['pos']['x']-_0x189593[_0x1094ea(0x148)]['x']*_0x26d1f1*0.5,_0x189593[_0x1094ea(0xfa)][_0x425c10+0x1]=_0x189593[_0x1094ea(0x15f)]['y']-_0x189593[_0x1094ea(0x148)]['y']*_0x26d1f1*0.5,_0x189593[_0x1094ea(0xfa)][_0x425c10+0x2]=_0x189593[_0x1094ea(0x15f)]['z']-_0x189593['velocity']['z']*_0x26d1f1*0.5;}if(_0x189593['line'][_0x1094ea(0xf8)][_0x1094ea(0x138)][_0x1094ea(0x13a)][_0x1094ea(0xa7)]=!0x0,_0x189593['pos'][_0x1094ea(0xa9)]()>0x514){const _0x149712=Math[_0x1094ea(0x118)](Math['random']()*starPositions[_0x1094ea(0xa9)]);_0x189593[_0x1094ea(0x15f)]['copy'](starPositions[_0x149712]);const _0x27d9bd=_0x189593[_0x1094ea(0x15f)][_0x1094ea(0x104)]()[_0x1094ea(0xf2)]();_0x189593[_0x1094ea(0x148)][_0x1094ea(0x153)](_0x27d9bd['add'](new THREE[(_0x1094ea(0xdc))](THREE['MathUtils'][_0x1094ea(0xb8)](0.5),THREE[_0x1094ea(0xa4)][_0x1094ea(0xb8)](0.5),THREE['MathUtils']['randFloatSpread'](0.5)))[_0x1094ea(0xf2)]()['multiplyScalar'](0x5+0x5*Math[_0x1094ea(0x15e)]()));}}),renderer[_0x2c5586(0x13c)](scene,camera);}window[_0x1840d6(0x160)](_0x1840d6(0xe8),_0x26152d=>{const _0x2bab72=_0x1840d6;updateTargetRotation(_0x26152d[_0x2bab72(0x8d)],_0x26152d['clientY']);}),window[_0x1840d6(0x160)](_0x1840d6(0x124),_0x59ef8f=>{const _0x46299c=_0x1840d6;if(_0x59ef8f[_0x46299c(0x8b)][_0x46299c(0xa9)]>0x0){const _0x5e5e6f=_0x59ef8f[_0x46299c(0x8b)][0x0];updateTargetRotation(_0x5e5e6f[_0x46299c(0x8d)],_0x5e5e6f['clientY']);}},{'passive':!0x0}),startBtn['addEventListener'](_0x1840d6(0x14f),()=>{const _0x5e7a44=_0x1840d6,_0x115b69=inputTextEl[_0x5e7a44(0xc8)][_0x5e7a44(0xd4)](),_0x40840c=imageLinksEl[_0x5e7a44(0xc8)][_0x5e7a44(0xd4)](),_0x7649f4=musicSelector['value'];if(''===_0x115b69)return alert(_0x5e7a44(0x158)),void _0x115b69['focus']();if(''===_0x40840c)return alert(_0x5e7a44(0x154)),void imageLinksEl[_0x5e7a44(0xef)]();textLines=_0x115b69[_0x5e7a44(0xa9)]?_0x115b69[_0x5e7a44(0xfc)]('\x0a')[_0x5e7a44(0x14b)](_0x2264d5=>''!==_0x2264d5[_0x5e7a44(0xd4)]()):[],images=_0x40840c['length']?_0x40840c[_0x5e7a44(0xfc)]('\x0a')[_0x5e7a44(0x14b)](_0x4f47e1=>''!==_0x4f47e1['trim']()):[],initScene();for(let _0x49731d=0x0;_0x49731d<planes['length'];_0x49731d++){let _0x11a91e='';textLines['length']>0x0&&(_0x11a91e=textLines[_0x49731d%textLines[_0x5e7a44(0xa9)]]),updateLabelText(_0x49731d,_0x11a91e);}!audio&&musicSelector[_0x5e7a44(0xc8)]&&playMusic(musicSelector['value']);const _0x5f02f7={'textLines':textLines,'imageLinks':images,'music':_0x7649f4},_0x183d8c=JSON[_0x5e7a44(0xd1)](_0x5f02f7),_0x355e21=encodeData(_0x183d8c),_0x5ace59=new URL(location['origin']+_0x5e7a44(0x132));_0x5ace59[_0x5e7a44(0xde)]='id='+_0x355e21,shareLinkEl[_0x5e7a44(0x11a)][_0x5e7a44(0x146)]='none',document['getElementById'](_0x5e7a44(0x142))[_0x5e7a44(0x11a)]['display']='block',setTimeout(()=>{const _0x2c6358=_0x5e7a44;shareLinkEl[_0x2c6358(0x99)]=_0x5ace59['toString'](),shareLinkEl[_0x2c6358(0x123)]=_0x5ace59[_0x2c6358(0x13e)](),shareLinkEl[_0x2c6358(0xec)]='Click\x20để\x20mở\x20link\x20trong\x20tab\x20mới',shareLinkEl[_0x2c6358(0x11a)][_0x2c6358(0x146)]=_0x2c6358(0xbb),document['getElementById'](_0x2c6358(0x142))['style']['display']=_0x2c6358(0x13f);},0x2710);}),animate(),loadFromURL()?document[_0x1840d6(0xa1)]('ui')[_0x1840d6(0x11a)]['display']='none':shareLinkEl['style'][_0x1840d6(0x146)]=_0x1840d6(0x13f),window[_0x1840d6(0x160)](_0x1840d6(0xbe),()=>{const _0x13f3dd=_0x1840d6;camera[_0x13f3dd(0x15c)]=window[_0x13f3dd(0x84)]/window[_0x13f3dd(0xc1)],camera[_0x13f3dd(0xd6)](),renderer[_0x13f3dd(0xe0)](window[_0x13f3dd(0x84)],window[_0x13f3dd(0xc1)]);}),document[_0x1840d6(0xa1)](_0x1840d6(0x8a))['addEventListener'](_0x1840d6(0x14f),()=>{const _0x181afc=_0x1840d6,_0x520458=_0x2bf0bd,_0x2bf0bd=window['location'][_0x181afc(0x102)]+window['location'][_0x181afc(0xd2)]+_0x181afc(0xc9)+encodeURIComponent(_0x520458),_0x57bd52=document[_0x181afc(0xa1)](_0x181afc(0xe7));_0x57bd52[_0x181afc(0x123)]=_0x2bf0bd,_0x57bd52[_0x181afc(0x99)]=shortenLink(_0x2bf0bd,maxLength),_0x57bd52[_0x181afc(0xec)]=_0x2bf0bd,_0x57bd52[_0x181afc(0x11a)]['display']=_0x181afc(0x80);}),qrBtn[_0x1840d6(0x160)]('click',async()=>{const _0x1b7756=_0x1840d6;if(!shareLinkEl[_0x1b7756(0x123)]||_0x1b7756(0x13f)===shareLinkEl[_0x1b7756(0x11a)][_0x1b7756(0x146)])return void alert(_0x1b7756(0xb3));const _0x158a72=shareLinkEl['href'];heartFrame['style'][_0x1b7756(0x146)]=_0x1b7756(0x89),await drawHeartAndQRCode(_0x158a72);});const width=canvas['width'],height=canvas[_0x1840d6(0xf9)],heartPathStr=_0x1840d6(0x96),scale=0x8,heartWidth=0x20,heartHeight=29.6,heartCenterX=0x10,heartCenterY=0xe,centerX=width/0x2,centerY=height/0x2,qrSize=0x64;async function drawHeartAndQRCode(_0x5cdf11){const _0x5380e1=_0x1840d6;ctx['clearRect'](0x0,0x0,width,height);const _0x181737=new Image();_0x181737[_0x5380e1(0x8e)]=_0x5380e1(0x86),await new Promise((_0x23fc3b,_0x2f8462)=>{const _0x2d2dd7=_0x5380e1;_0x181737[_0x2d2dd7(0xb0)]=_0x23fc3b,_0x181737[_0x2d2dd7(0x112)]=_0x2f8462;});const _0x1b8c63=centerX-0x80,_0x1e4d13=centerY-0x76;ctx[_0x5380e1(0x159)](_0x181737,_0x1b8c63,_0x1e4d13,0x100,0xec);try{const _0x43ab4b=document[_0x5380e1(0xa2)](_0x5380e1(0xd9));_0x43ab4b[_0x5380e1(0xfd)]=qrSize,_0x43ab4b['height']=qrSize,await QRCode[_0x5380e1(0x134)](_0x43ab4b,_0x5cdf11,{'width':qrSize,'margin':0x1,'color':{'dark':_0x5380e1(0xc5),'light':'#ffffff'}});const _0x465179=centerX-qrSize/0x2,_0xf48659=centerY-qrSize/0x2;ctx[_0x5380e1(0x159)](_0x43ab4b,_0x465179,_0xf48659,qrSize,qrSize);}catch(_0x1d20d4){console['error']('Lỗi\x20tạo\x20QR\x20code:',_0x1d20d4);}}const downloadBtn=document['getElementById'](_0x1840d6(0xe5));downloadBtn['addEventListener'](_0x1840d6(0x14f),function(){const _0x4b3689=_0x1840d6,_0x44e22a=canvas[_0x4b3689(0xd0)](_0x4b3689(0x81)),_0x233b69=document[_0x4b3689(0xa2)]('a');_0x233b69['href']=_0x44e22a,_0x233b69[_0x4b3689(0x10a)]=_0x4b3689(0xa6),document['body'][_0x4b3689(0xcc)](_0x233b69),_0x233b69[_0x4b3689(0x14f)](),document[_0x4b3689(0xe1)][_0x4b3689(0x143)](_0x233b69);});const uploadInput=document['getElementById'](_0x1840d6(0xd3)),textarea=document[_0x1840d6(0xa1)](_0x1840d6(0xca)),encody=_0x1840d6(0x11f),APY=atob(encody);uploadInput['addEventListener'](_0x1840d6(0x119),async _0x4cdf6c=>{const _0x2df676=_0x1840d6,_0x1da16b=_0x4cdf6c['target'][_0x2df676(0xdd)];if(_0x1da16b['length']){for(const _0x27c5d9 of _0x1da16b){const _0xdb1d0c=new FormData();_0xdb1d0c[_0x2df676(0x83)](_0x2df676(0x11e),_0x27c5d9);try{const _0x399a0a=await fetch(_0x2df676(0xdf)+APY,{'method':_0x2df676(0x149),'body':_0xdb1d0c}),_0x5de2a8=await _0x399a0a['json']();if(_0x5de2a8[_0x2df676(0xae)]){const _0x188275=_0x5de2a8[_0x2df676(0x92)]['url'];textarea[_0x2df676(0xc8)]+=_0x188275+'\x0a';}else alert(_0x2df676(0x113)+_0x5de2a8['error'][_0x2df676(0xda)]);}catch(_0x30393b){alert('Lỗi\x20khi\x20upload\x20ảnh:\x20'+_0x30393b[_0x2df676(0xda)]);}}uploadInput[_0x2df676(0xc8)]='';}}),((()=>{const _0x5205e0=_0x1840d6,_0x1fcb62=document[_0x5205e0(0xa1)](_0x5205e0(0x88)),_0x417d8e=document['getElementById'](_0x5205e0(0xfe)),_0x244157=document[_0x5205e0(0xa1)](_0x5205e0(0xcf)),_0x23066d=document[_0x5205e0(0xa1)](_0x5205e0(0x151)),_0x3bdd31=document[_0x5205e0(0xa1)](_0x5205e0(0xb5)),_0x44ec73=document[_0x5205e0(0xa1)]('refresh-captcha'),_0x204ee1=document[_0x5205e0(0xa1)](_0x5205e0(0xd3)),_0x275de4=document['querySelector'](_0x5205e0(0x85));_0x1fcb62['addEventListener'](_0x5205e0(0x14f),_0x34d1af=>{const _0x1c4bb1=_0x5205e0;_0x34d1af[_0x1c4bb1(0xf7)]===_0x1fcb62&&(_0x1fcb62[_0x1c4bb1(0x11a)][_0x1c4bb1(0x146)]=_0x1c4bb1(0x13f));});let _0x55c682='';function _0x4fec8d(){const _0x22ce38=_0x5205e0;_0x55c682=function(_0x5e13f1=0x5){const _0x1a45b4=_0x5360,_0x5b203b=_0x1a45b4(0xce);let _0x2a96bd='';for(let _0x5acdeb=0x0;_0x5acdeb<_0x5e13f1;_0x5acdeb++)_0x2a96bd+=_0x5b203b[_0x1a45b4(0x9b)](Math['floor'](0x37*Math['random']()));return _0x2a96bd;}(),_0x417d8e['textContent']=_0x55c682,_0x244157[_0x22ce38(0xc8)]='',_0x23066d[_0x22ce38(0x99)]='';}_0x275de4[_0x5205e0(0x160)](_0x5205e0(0x14f),_0x1429b6=>{const _0x5432d8=_0x5205e0;_0x1429b6[_0x5432d8(0xe6)](),_0x4fec8d(),_0x1fcb62[_0x5432d8(0x11a)][_0x5432d8(0x146)]=_0x5432d8(0xc3),_0x244157[_0x5432d8(0xef)]();}),_0x44ec73[_0x5205e0(0x160)]('click',()=>{const _0x59ad87=_0x5205e0;_0x4fec8d(),_0x244157[_0x59ad87(0xef)]();}),_0x3bdd31[_0x5205e0(0x160)](_0x5205e0(0x14f),()=>{const _0x41ab01=_0x5205e0,_0x3fc16f=_0x244157[_0x41ab01(0xc8)]['trim']();''!==_0x3fc16f?_0x3fc16f===_0x55c682?(_0x23066d[_0x41ab01(0x99)]='',_0x1fcb62['style'][_0x41ab01(0x146)]='none',_0x204ee1[_0x41ab01(0x14f)]()):(_0x23066d[_0x41ab01(0x99)]='Mã\x20CAPTCHA\x20không\x20đúng,\x20vui\x20lòng\x20thử\x20lại.',_0x244157[_0x41ab01(0xef)]()):_0x23066d[_0x41ab01(0x99)]=_0x41ab01(0x133);}),_0x244157[_0x5205e0(0x160)](_0x5205e0(0x12f),_0x9452c5=>{const _0x3007ab=_0x5205e0;'Enter'===_0x9452c5[_0x3007ab(0x105)]&&(_0x9452c5[_0x3007ab(0xe6)](),_0x3bdd31[_0x3007ab(0x14f)]());}),_0x204ee1[_0x5205e0(0x160)](_0x5205e0(0x119),()=>{const _0xc40cf6=_0x5205e0;_0x1fcb62[_0xc40cf6(0x11a)][_0xc40cf6(0x146)]=_0xc40cf6(0x13f);});})());const img=new Image();img[_0x1840d6(0x8e)]='https://github.com/Panbap/anh/blob/main/error/htbt1.png?raw=true',img[_0x1840d6(0x11a)]['display']=_0x1840d6(0x13f),img[_0x1840d6(0xb0)]=()=>{const _0x82b13f=_0x1840d6;img[_0x82b13f(0x11a)][_0x82b13f(0x146)]='block',img[_0x82b13f(0x11a)][_0x82b13f(0xeb)]=_0x82b13f(0x87),img[_0x82b13f(0x11a)][_0x82b13f(0xf9)]=_0x82b13f(0xaf);},img[_0x1840d6(0x112)]=()=>{const _0x4edb24=_0x1840d6;console[_0x4edb24(0x91)](_0x4edb24(0x90));const _0x5684ef=document[_0x4edb24(0xa2)]('canvas'),_0x4b8c67=_0x5684ef[_0x4edb24(0x117)]('2d');function _0x54fa9d(){const _0x19763f=_0x4edb24;_0x5684ef[_0x19763f(0xfd)]=window['innerWidth'],_0x5684ef[_0x19763f(0xf9)]=window[_0x19763f(0xc1)],(function(){const _0x51481d=_0x19763f;_0x4b8c67[_0x51481d(0xa0)](0x0,0x0,_0x5684ef[_0x51481d(0xfd)],_0x5684ef[_0x51481d(0xf9)]),_0x4b8c67[_0x51481d(0x126)]=_0x51481d(0x140),_0x4b8c67[_0x51481d(0xc6)](0x0,0x0,_0x5684ef[_0x51481d(0xfd)],_0x5684ef[_0x51481d(0xf9)]),_0x4b8c67[_0x51481d(0x126)]='#ffffff',_0x4b8c67[_0x51481d(0x10d)]='bold\x2048px\x20Arial,\x20sans-serif',_0x4b8c67[_0x51481d(0x139)]=_0x51481d(0xa8),_0x4b8c67['textBaseline']=_0x51481d(0xb4);const _0x4bd1ae=_0x51481d(0x11b),_0x40ec86=0.8*_0x5684ef[_0x51481d(0xfd)],_0x56c0df=0x3c,_0x8fd5ad=_0x5684ef[_0x51481d(0xf9)]/0x2-_0x56c0df/0x2;!function(_0x1c55c3,_0x6c5d27,_0x2ffc61,_0x1d8565,_0x5c098f,_0x5e915a){const _0x7ea94b=_0x51481d,_0x1880cf=_0x6c5d27[_0x7ea94b(0xfc)]('\x20');let _0x22698f='';const _0x19a8d4=[];for(let _0x493c07=0x0;_0x493c07<_0x1880cf[_0x7ea94b(0xa9)];_0x493c07++){const _0x442a79=_0x22698f+_0x1880cf[_0x493c07]+'\x20';_0x1c55c3[_0x7ea94b(0x9d)](_0x442a79)[_0x7ea94b(0xfd)]>_0x5c098f&&_0x493c07>0x0?(_0x19a8d4[_0x7ea94b(0x106)](_0x22698f[_0x7ea94b(0xd4)]()),_0x22698f=_0x1880cf[_0x493c07]+'\x20'):_0x22698f=_0x442a79;}_0x19a8d4[_0x7ea94b(0x106)](_0x22698f[_0x7ea94b(0xd4)]()),_0x19a8d4[_0x7ea94b(0x9a)]((_0x427040,_0x4a7582)=>{_0x1c55c3['fillText'](_0x427040,_0x2ffc61,_0x1d8565+_0x4a7582*_0x5e915a);});}(_0x4b8c67,_0x4bd1ae,_0x5684ef[_0x51481d(0xfd)]/0x2,_0x8fd5ad,_0x40ec86,_0x56c0df);}());}window[_0x4edb24(0x160)]('resize',_0x54fa9d),_0x54fa9d(),Object[_0x4edb24(0xd7)](_0x5684ef[_0x4edb24(0x11a)],{'position':_0x4edb24(0xb6),'top':0x0,'left':0x0,'width':_0x4edb24(0x137),'height':'100vh','zIndex':0x270f,'pointerEvents':_0x4edb24(0xaf)}),document[_0x4edb24(0xe1)]['appendChild'](_0x5684ef);};
+
+// Decoded version of hh.js
+// This appears to be a 3D heart animation with text and QR code generation
+
+const style = document.createElement('style');
+style.textContent = `
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1e2a38, #16202b);
+            color: #cfd8dc;
+            font-family: "Playpen Sans", cursive;
+            overflow: hidden;
+        }
+
+        #ui {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 320px;
+            transform: translate(-50%, -50%);
+            padding: 15px 20px;
+            border-radius: 12px;
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+            box-sizing: border-box;
+            max-height: 90vh;
+            overflow-y: scroll;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        #ui::-webkit-scrollbar {
+            display: none;
+        }
+
+        #ui label {
+            font-weight: 600;
+            font-size: 15px;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        #ui textarea {
+            width: 95%;
+            height: 70px;
+            margin-bottom: 12px;
+            background: #1b1b1b;
+            border: 1px solid #3d3d3d;
+            color: #ddd;
+            font-size: 14px;
+            resize: vertical;
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-family: "Courier New", Courier, monospace;
+            transition: border-color 0.3s ease;
+        }
+
+        #ui textarea:focus {
+            border-color: #66aaff;
+            outline: none;
+            background: #222;
+        }
+
+        #ui h1 {
+            text-align: center;
+        }
+
+        #musicSelector {
+            width: 100%;
+            padding: 10px 14px;
+            font-size: 15px;
+            border-radius: 12px;
+            border: none;
+            background: #223344;
+            color: #e0e6f3;
+            text-align-last: center;
+            text-align: center;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #musicSelector:hover {
+            background-color: #2a3b56;
+        }
+
+        #buttonContainer {
+            display: flex;
+            gap: 12px;
+        }
+
+        #startBtn,
+        #qrBtn {
+            font-family: "Playpen Sans", cursive;
+            flex: 1;
+            padding: 12px 0;
+            background: #4a90e2;
+            border: none;
+            color: white;
+            font-weight: 700;
+            font-size: 17px;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.6);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #startBtn:hover {
+            background: #6aa0ff;
+            box-shadow: 0 8px 25px rgba(106, 160, 255, 0.8);
+        }
+
+        #shareLink {
+            display: inline-block;
+            max-width: 250px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            vertical-align: bottom;
+            color: #42a5f5;
+            cursor: pointer;
+            text-decoration: underline;
+            font-size: 15px;
+            user-select: all;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .heart-frame {
+            position: relative;
+            margin: 20px auto;
+        }
+
+        #finalCanvas {
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-text {
+            text-align: center;
+            color: #ff679a;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        textarea {
+            width: 300px;
+            height: 150px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #cccccc00;
+            border-radius: 5px;
+            resize: both;
+        }
+
+        textarea::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        textarea::-webkit-scrollbar-thumb {
+            background-color: #888;
+            border-radius: 5px;
+            border: 2px solid #ffffff00;
+        }
+
+        textarea::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
+        }
+
+        textarea::-webkit-scrollbar-track {
+            background-color: #f1f1f100;
+            border-radius: 5px;
+        }
+
+        .custom-upload-button {
+            font-family: "Playpen Sans", cursive;
+            display: block;
+            margin: 10px auto;
+            padding: 12px 24px;
+            background-color: #4a90e2;
+            color: white;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            user-select: none;
+            text-align: center;
+            width: 40%;
+        }
+
+        #downloadBtn {
+            font-family: "Playpen Sans", cursive;
+            display: block;
+            margin: 12px auto 0 auto;
+            background-color: #ff7094;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        #downloadBtn:hover {
+            background-color: #ff5682;
+            transform: translateY(-2px);
+        }
+
+        #downloadBtn:active {
+            transform: scale(0.98);
+        }
+
+        #captcha-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        #captcha-popup>div {
+            background: white;
+            padding: 25px 30px;
+            border-radius: 10px;
+            max-width: 320px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        #captcha-code {
+            font-family: "Playpen Sans", cursive;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            background: #4a90e2;
+            padding: 10px 20px;
+            user-select: none;
+            border-radius: 6px;
+        }
+
+        #refresh-captcha {
+            margin-left: 10px;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 6px;
+            background: #4a90e2;
+            color: white;
+            cursor: pointer;
+        }
+
+        #captcha-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #4a90e2;
+            border-radius: 6px;
+            margin-top: 15px;
+            box-sizing: border-box;
+        }
+
+        #captcha-error {
+            color: red;
+            margin-top: 10px;
+            min-height: 20px;
+        }
+
+        #captcha-submit {
+            margin-top: 20px;
+            background: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: "Playpen Sans", cursive;
+        }
+
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            font-size: 24px;
+            color: #555;
+            flex-direction: column;
+        }
+
+        /* Donate Button */
+        #donateBtn {
+            font-family: "Playpen Sans", cursive;
+            padding: 10px 24px;
+            background-color: #ff7094;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 4px 10px rgba(255, 112, 148, 0.5);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            display: block;
+            margin: 10px auto;
+            width: max-content;
+            text-align: center;
+        }
+
+        #donateBtn:hover {
+            background-color: #e85c7a;
+            box-shadow: 0 6px 15px rgba(232, 92, 122, 0.7);
+        }
+`;
+
+document.head.appendChild(style);
+
+// Donate modal elements
+const donateBtn = document.getElementById('donateBtn');
+const donateModal = document.getElementById('donateModal');
+const closeDonateModal = document.getElementById('closeDonateModal');
+const donateQRImg = document.getElementById('donateQRImg');
+const qrDonateLink = 'https://files.catbox.moe/gt5se9.png';
+
+// Donate button event handlers
+donateBtn.addEventListener('click', () => {
+    donateQRImg.src = qrDonateLink;
+    donateModal.style.display = 'flex';
+});
+
+closeDonateModal.addEventListener('click', () => {
+    donateModal.style.display = 'none';
+});
+
+donateModal.addEventListener('click', (event) => {
+    if (event.target === donateModal) {
+        donateModal.style.display = 'none';
+    }
+});
+
+// Set placeholder text
+document.getElementById('imageLinks').placeholder = 'Ví dụ:\nhttps://example.com/image1.png\nhttps://example.com/image2.png\nNhập 1 chữ bất kỳ để bỏ qua ảnh';
+
+// Data encoding/decoding functions
+const encodeData = (data) => btoa(encodeURIComponent(data).replace(/%(\w{2})/g, (match, hex) => String.fromCharCode('0x' + hex))).replace(/[+/=]/g, char => ({'+': '-', '/': '_', '=': ''}[char] || ''));
+
+const decodeData = (encodedData) => {
+    // Replace URL-safe characters back
+    encodedData = encodedData.replace(/[-_]/g, char => ({'-': '+', '_': '/'}[char]));
+    
+    // Add padding if needed
+    while (encodedData.length % 4) {
+        encodedData += '=';
+    }
+    
+    return decodeURIComponent(atob(encodedData).split('').map(char => '%' + char.charCodeAt(0).toString(16).padStart(2, '0')).join(''));
+};
+
+// Get data from URL hash
+function getDataFromURL() {
+    if (location.hash.startsWith('#id=')) {
+        const encodedData = location.hash.slice(4);
+        const decodedData = decodeData(encodedData);
+        if (decodedData) {
+            try {
+                return JSON.parse(decodedData);
+            } catch (error) {
+                console.error('JSON parse error:', error);
+                return null;
+            }
+        }
+    }
+    return null;
+}
+
+// DOM elements
+const inputTextEl = document.getElementById('inputText');
+const imageLinksEl = document.getElementById('imageLinks');
+const startBtn = document.getElementById('startBtn');
+const shareLinkEl = document.getElementById('shareLink');
+const qrBtn = document.getElementById('qrBtn');
+const heartFrame = document.querySelector('.heart-frame');
+const canvas = document.getElementById('finalCanvas');
+const ctx = canvas.getContext('2d');
+const musicSelector = document.getElementById('musicSelector');
+
+let audio = null;
+
+// Music functions
+function waitUserToStartMusic(musicUrl) {
+    const startMusic = () => {
+        playMusic(musicUrl);
+        document.removeEventListener('click', startMusic);
+        document.removeEventListener('touchstart', startMusic);
+    };
+    
+    document.addEventListener('click', startMusic);
+    document.addEventListener('touchstart', startMusic);
+}
+
+function playMusic(musicUrl) {
+    if (audio) {
+        audio.pause();
+        audio = null;
+    }
+    
+    if (musicUrl) {
+        audio = new Audio(musicUrl);
+        audio.loop = true;
+        audio.volume = 0.5;
+        audio.play().catch(error => {
+            console.warn('Không thể phát nhạc tự động:', error);
+        });
+    }
+}
+
+// URL parameter functions
+function updateURLParam(param, value) {
+    const url = new URL(window.location);
+    if (value) {
+        url.searchParams.set(param, value);
+    } else {
+        url.searchParams.delete(param);
+    }
+    window.history.replaceState({}, '', url);
+}
+
+// Music selector event
+musicSelector.addEventListener('change', () => {
+    const selectedMusic = musicSelector.value;
+    updateURLParam('music', selectedMusic);
+    playMusic(selectedMusic);
+});
+
+// Load music from URL on page load
+window.addEventListener('load', () => {
+    const urlData = getDataFromURL();
+    if (urlData && urlData.music) {
+        musicSelector.value = urlData.music;
+        waitUserToStartMusic(urlData.music);
+    }
+});
+
+// Three.js scene setup
+let images = [];
+let textLines = [];
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 3000);
+camera.position.z = 400;
+
+const renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+// Create starfield
+const starGeo = new THREE.BufferGeometry();
+const starCount = 800;
+const starPos = [];
+
+for (let i = 0; i < starCount; i++) {
+    const radius = THREE.MathUtils.randFloat(900, 1200);
+    const u = Math.acos(THREE.MathUtils.randFloat(2));
+    const v = THREE.MathUtils.randFloat(2 * Math.PI);
+    
+    starPos.push(
+        radius * Math.sin(u) * Math.cos(v),
+        radius * Math.sin(u) * Math.sin(v),
+        radius * Math.cos(u)
+    );
+}
+
+starGeo.setAttribute('position', new THREE.Float32BufferAttribute(starPos, 3));
+
+const starsMat = new THREE.PointsMaterial({
+    color: 0xffffff,
+    size: 5,
+    transparent: true,
+    opacity: 0.9
+});
+
+scene.add(new THREE.Points(starGeo, starsMat));
+
+// Store star positions for shooting stars
+const starPositions = [];
+for (let i = 0; i < starCount; i++) {
+    starPositions.push(new THREE.Vector3(starPos[3*i], starPos[3*i+1], starPos[3*i+2]));
+}
+
+// Create shooting stars
+const shootingStars = [];
+const shootingStarCount = 5;
+
+for (let i = 0; i < shootingStarCount; i++) {
+    const geometry = new THREE.BufferGeometry();
+    const positions = new Float32Array(30); // 10 points * 3 coordinates
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    
+    const material = new THREE.LineBasicMaterial({
+        color: 0xffffff,
+        transparent: true,
+        opacity: 0.9
+    });
+    
+    const line = new THREE.Line(geometry, material);
+    const pos = new THREE.Vector3(
+        THREE.MathUtils.randFloatSpread(1000),
+        THREE.MathUtils.randFloat(400, 700),
+        THREE.MathUtils.randFloat(1000)
+    );
+    const velocity = new THREE.Vector3(0.8, -1, 0.2).normalize().multiplyScalar(5 + 5 * Math.random());
+    
+    shootingStars.push({
+        line: line,
+        positions: positions,
+        pos: pos,
+        velocity: velocity
+    });
+    
+    scene.add(line);
+}
+
+// Create shooting stars from existing stars
+const shootingStarsFromStars = [];
+const shootingStarCountFromStars = 30;
+
+for (let i = 0; i < shootingStarCountFromStars; i++) {
+    const geometry = new THREE.BufferGeometry();
+    const positions = new Float32Array(30);
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    
+    const material = new THREE.LineBasicMaterial({
+        color: 0xffffff,
+        transparent: true,
+        opacity: 0.9
+    });
+    
+    const line = new THREE.Line(geometry, material);
+    const randomIndex = Math.floor(Math.random() * starPositions.length);
+    const pos = starPositions[randomIndex].clone();
+    const velocity = pos.clone().normalize().clone().add(new THREE.Vector3(
+        THREE.MathUtils.randFloatSpread(0.5),
+        THREE.MathUtils.randFloat(0.5),
+        THREE.MathUtils.randFloat(0.5)
+    )).normalize().multiplyScalar(5 + 5 * Math.random());
+    
+    shootingStarsFromStars.push({
+        line: line,
+        positions: positions,
+        pos: pos,
+        velocity: velocity
+    });
+    
+    scene.add(line);
+}
+
+// Reset images array
+images = [];
+
+const textureLoader = new THREE.TextureLoader();
+const group = new THREE.Group();
+
+// Helper function to get random position on sphere
+function randomPosOnSphere(radius) {
+    const u = Math.acos(THREE.MathUtils.randFloat(2));
+    const v = THREE.MathUtils.randFloat(2 * Math.PI);
+    
+    return new THREE.Vector3(
+        radius * Math.sin(u) * Math.cos(v),
+        radius * Math.sin(u) * Math.sin(v),
+        radius * Math.cos(u)
+    );
+}
+
+// Create text sprite function
+function createTextSprite(text) {
+    const canvas = document.createElement('canvas');
+    canvas.width = 512;
+    canvas.height = 128;
+    
+    const context = canvas.getContext('2d');
+    const colors = ['#ff8690', '#76b776', '#63c7c7'];
+    const strokeColors = ['#cfd8dc', '#cfd8dc', '#cfd8dc'];
+    
+    let colorIndex = 0;
+    
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.magFilter = THREE.LinearFilter;
+    
+    const material = new THREE.SpriteMaterial({
+        map: texture,
+        transparent: true,
+        emissive: new THREE.Color(0xbfe6ff),
+        emissiveIntensity: 1.5
+    });
+    
+    const sprite = new THREE.Sprite(material);
+    
+    function updateCanvas() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.font = 'bold 72px Playpen Sans';
+        context.textAlign = 'center';
+        context.textBaseline = 'middle';
+        context.fillStyle = colors[colorIndex];
+        context.lineWidth = 2;
+        context.strokeStyle = strokeColors[colorIndex];
+        context.strokeText(text, 256, 64);
+        context.fillText(text, 256, 64);
+        texture.needsUpdate = true;
+    }
+    
+    sprite.scale.set(150, 40, 1);
+    updateCanvas();
+    
+    // Change color every 10 seconds
+    setInterval(() => {
+        colorIndex = (colorIndex + 1) % colors.length;
+        updateCanvas();
+    }, 10000);
+    
+    // Load font and update canvas
+    document.fonts.load('48px Playpen Sans').then(() => {
+        updateCanvas();
+    });
+    
+    return sprite;
+}
+
+scene.add(group);
+
+// Arrays to store objects
+const planes = [];
+const labels = [];
+const imagePositions = [];
+const textPositions = [];
+const boxCount = 50;
+const radiusImage = 400;
+const radiusText = 600;
+
+// Initialize scene function
+function initScene() {
+    // Clear existing objects
+    group.clear();
+    planes.length = 0;
+    labels.length = 0;
+    imagePositions.length = 0;
+    textPositions.length = 0;
+    
+    if (images.length === 0 && textLines.length === 0) return;
+    
+    // Create image planes
+    for (let i = 0; i < boxCount; i++) {
+        const size = 20 + 10 * Math.random();
+        const geometry = new THREE.PlaneGeometry(size, size);
+        
+        const texture = textureLoader.load(images[i % images.length], (loadedTexture) => {
+            loadedTexture.minFilter = THREE.LinearMipMapLinearFilter;
+            loadedTexture.magFilter = THREE.LinearFilter;
+            loadedTexture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+        });
+        
+        const material = new THREE.MeshBasicMaterial({
+            map: texture,
+            transparent: true
+        });
+        
+        const mesh = new THREE.Mesh(geometry, material);
+        const position = randomPosOnSphere(radiusImage);
+        
+        imagePositions.push(position);
+        mesh.position.set(0, 0, 0);
+        mesh.scale.set(0.05, 0.05, 0.05);
+        mesh.userData = {
+            progress: 0,
+            speed: 0.0005 + 0.001 * Math.random(),
+            delayOffset: 0.02 * i
+        };
+        
+        group.add(mesh);
+        planes.push(mesh);
+    }
+    
+    // Create text labels
+    for (let i = 0; i < 2 * boxCount; i++) {
+        const textSprite = createTextSprite(textLines[i % textLines.length]);
+        const position = randomPosOnSphere(radiusText);
+        
+        textPositions.push(position);
+        textSprite.position.set(0, 0, 0);
+        textSprite.scale.set(1.5, 0.4, 1);
+        textSprite.userData = {
+            progress: 0,
+            speed: 0.0005 + 0.001 * Math.random(),
+            delayOffset: 0.02 * i
+        };
+        
+        scene.add(textSprite);
+        labels.push(textSprite);
+    }
+}
+
+// Update label text function
+function updateLabelText(index, newText) {
+    if (index < 0 || index >= labels.length) return;
+    
+    const existingLabel = labels[index];
+    if (existingLabel) {
+        scene.remove(existingLabel);
+        existingLabel.material.map.dispose();
+        existingLabel.material.dispose();
+    }
+    
+    if (newText.trim() === '') {
+        labels[index] = null;
+        return;
+    }
+    
+    const newLabel = createTextSprite(newText);
+    newLabel.position.copy(textPositions[index]);
+    scene.add(newLabel);
+    labels[index] = newLabel;
+}
+
+initScene();
+
+// Mouse/touch interaction variables
+let targetRotX = 0;
+let targetRotY = 0;
+let currentRotX = 0;
+let currentRotY = 0;
+
+const maxRotX = Math.PI / 180 * 90; // 90 degrees
+const maxRotY = 2 * Math.PI; // 360 degrees
+
+function updateTargetRotation(mouseX, mouseY) {
+    const normalizedX = (mouseX / window.innerWidth) * 2 - 1;
+    const normalizedY = (mouseY / window.innerHeight) * 2 - 1;
+    
+    targetRotY = normalizedX * maxRotY;
+    targetRotX = normalizedY * maxRotX;
+}
+
+// Share link function
+function updateShareLink(textLines, imageLinks, music) {
+    const data = {
+        textLines: textLines,
+        imageLinks: imageLinks,
+        music: music
+    };
+    
+    const jsonString = JSON.stringify(data);
+    const encodedData = encodeData(jsonString);
+    const url = new URL(location.origin + '/Textlove/index.html');
+    url.hash = 'id=' + encodedData;
+    
+    shareLinkEl.href = url.toString();
+    shareLinkEl.textContent = url.toString();
+    shareLinkEl.title = 'Click để mở link trong tab mới';
+    shareLinkEl.style.display = 'inline-block';
+}
+
+// Load from URL function
+function loadFromURL() {
+    const urlData = getDataFromURL();
+    if (!urlData) return false;
+    
+    if (urlData.textLines) {
+        textLines = urlData.textLines;
+        inputTextEl.value = textLines.join('\n');
+    }
+    
+    if (urlData.imageLinks) {
+        images = urlData.imageLinks;
+        imageLinksEl.value = images.join('\n');
+    }
+    
+    if (urlData.music) {
+        console.log('Nhạc từ URL:', urlData.music);
+        musicSelector.value = urlData.music;
+        playMusic(urlData.music);
+    } else {
+        console.log('Không có music trong data');
+    }
+    
+    initScene();
+    
+    // Update text labels
+    for (let i = 0; i < 2 * planes.length; i++) {
+        let text = '';
+        if (textLines.length > 0) {
+            text = textLines[i % textLines.length];
+        }
+        updateLabelText(i, text);
+    }
+    
+    updateShareLink(textLines, images, urlData.music);
+    return true;
+}
+
+// Animation loop
+function animate() {
+    requestAnimationFrame(animate);
+    
+    // Smooth camera rotation
+    currentRotX += 0.005 * (targetRotX - currentRotX);
+    currentRotY += 0.005 * (targetRotY - currentRotY);
+    
+    // Update camera position
+    camera.position.x = 600 * Math.sin(currentRotY) * Math.cos(currentRotX);
+    camera.position.y = 600 * Math.sin(currentRotX);
+    camera.position.z = 600 * Math.cos(currentRotY) * Math.cos(currentRotX);
+    camera.lookAt(0, 0, 0);
+    
+    const fallDistance = 1000;
+    
+    // Make planes face camera
+    planes.forEach(plane => {
+        plane.lookAt(camera.position);
+    });
+    
+    // Animate planes
+    planes.forEach((plane, index) => {
+        let progress = plane.userData.progress - plane.userData.delayOffset;
+        if (progress < 0) progress = 0;
+        else if (progress > 1) progress = 1;
+        
+        const startPos = imagePositions[index].clone();
+        startPos.y -= 400;
+        const endPos = new THREE.Vector3(startPos.x, fallDistance, startPos.z);
+        
+        plane.position.lerpVectors(endPos, startPos, progress);
+        
+        let scale = 0.05 + 1.95 * progress;
+        plane.scale.set(scale, scale, scale);
+        plane.up.set(0, 1, 0);
+        plane.lookAt(camera.position);
+        
+        plane.userData.progress += plane.userData.speed;
+        if (plane.userData.progress > 1 + plane.userData.delayOffset) {
+            plane.userData.progress = 0;
+        }
+        
+        // Update corresponding labels
+        const label1 = labels[2 * index];
+        if (label1) {
+            label1.visible = progress > 0.05;
+            const labelStartPos = textPositions[2 * index].clone();
+            labelStartPos.y -= 400;
+            const labelEndPos = new THREE.Vector3(labelStartPos.x, fallDistance, labelStartPos.z);
+            label1.position.lerpVectors(labelEndPos, labelStartPos, progress);
+        }
+        
+        const label2 = labels[2 * index + 1];
+        if (label2) {
+            label2.visible = progress > 0.05;
+            const labelStartPos = textPositions[2 * index + 1].clone();
+            labelStartPos.y -= 400;
+            const labelEndPos = new THREE.Vector3(labelStartPos.x, fallDistance, labelStartPos.z);
+            label2.position.lerpVectors(labelEndPos, labelStartPos, progress);
+        }
+    });
+    
+    // Animate shooting stars
+    shootingStars.forEach(star => {
+        star.pos.add(star.velocity);
+        
+        for (let i = 0; i < 10; i++) {
+            const index = 3 * i;
+            star.positions[index] = star.pos.x - star.velocity.x * i * 0.8;
+            star.positions[index + 1] = star.pos.y - star.velocity.y * i * 0.8;
+            star.positions[index + 2] = star.pos.z - star.velocity.z * i * 0.8;
+        }
+        
+        star.line.geometry.attributes.position.needsUpdate = true;
+        
+        if (star.pos.y < -500) {
+            star.pos.set(
+                THREE.MathUtils.randFloat(1000),
+                THREE.MathUtils.randFloat(400, 700),
+                THREE.MathUtils.randFloat(1000)
+            );
+        }
+    });
+    
+    // Animate shooting stars from stars
+    shootingStarsFromStars.forEach(star => {
+        star.pos.add(star.velocity);
+        
+        for (let i = 0; i < 10; i++) {
+            const index = 3 * i;
+            star.positions[index] = star.pos.x - star.velocity.x * i * 0.5;
+            star.positions[index + 1] = star.pos.y - star.velocity.y * i * 0.5;
+            star.positions[index + 2] = star.pos.z - star.velocity.z * i * 0.5;
+        }
+        
+        star.line.geometry.attributes.position.needsUpdate = true;
+        
+        if (star.pos.length() > 1300) {
+            const randomIndex = Math.floor(Math.random() * starPositions.length);
+            star.pos.copy(starPositions[randomIndex]);
+            const direction = star.pos.clone().normalize();
+            star.velocity.copy(direction.add(new THREE.Vector3(
+                THREE.MathUtils.randFloat(0.5),
+                THREE.MathUtils.randFloat(0.5),
+                THREE.MathUtils.randFloat(0.5)
+            )).normalize().multiplyScalar(5 + 5 * Math.random()));
+        }
+    });
+    
+    renderer.render(scene, camera);
+}
+
+// Event listeners
+window.addEventListener('mousemove', (event) => {
+    updateTargetRotation(event.clientX, event.clientY);
+});
+
+window.addEventListener('touchmove', (event) => {
+    if (event.touches.length > 0) {
+        const touch = event.touches[0];
+        updateTargetRotation(touch.clientX, touch.clientY);
+    }
+}, {passive: true});
+
+// Start button event
+startBtn.addEventListener('click', () => {
+    const inputText = inputTextEl.value.trim();
+    const imageLinks = imageLinksEl.value.trim();
+    const selectedMusic = musicSelector.value;
+    
+    if (inputText === '') {
+        alert('Vui lòng nhập ít nhất một câu!');
+        inputTextEl.focus();
+        return;
+    }
+    
+    if (imageLinks === '') {
+        alert('Vui lòng nhập ít nhất một link ảnh!');
+        imageLinksEl.focus();
+        return;
+    }
+    
+    textLines = inputText.length ? inputText.split('\n').filter(line => line.trim() !== '') : [];
+    images = imageLinks.length ? imageLinks.split('\n').filter(link => link.trim() !== '') : [];
+    
+    initScene();
+    
+    // Update text labels
+    for (let i = 0; i < planes.length; i++) {
+        let text = '';
+        if (textLines.length > 0) {
+            text = textLines[i % textLines.length];
+        }
+        updateLabelText(i, text);
+    }
+    
+    // Start music if not already playing
+    if (!audio && musicSelector.value) {
+        playMusic(musicSelector.value);
+    }
+    
+    // Create and update share link
+    const data = {
+        textLines: textLines,
+        imageLinks: images,
+        music: selectedMusic
+    };
+    
+    const jsonString = JSON.stringify(data);
+    const encodedData = encodeData(jsonString);
+    const url = new URL(location.origin + '/loinhan.html');
+    url.hash = 'id=' + encodedData;
+    
+    shareLinkEl.style.display = 'none';
+    document.getElementById('loading-screen').style.display = 'block';
+    
+    setTimeout(() => {
+        shareLinkEl.href = url.toString();
+        shareLinkEl.textContent = url.toString();
+        shareLinkEl.title = 'Click để mở link trong tab mới';
+        shareLinkEl.style.display = 'inline-block';
+        document.getElementById('loading-screen').style.display = 'none';
+    }, 10000);
+});
+
+// Start animation
+animate();
+
+// Load from URL if available, otherwise show UI
+if (loadFromURL()) {
+    document.getElementById('ui').style.display = 'none';
+} else {
+    shareLinkEl.style.display = 'none';
+}
+
+// Window resize handler
+window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+// QR button functionality and other features...
+// [The rest of the code continues with QR generation, image upload, captcha, etc.]
+
+// Heart and QR code drawing functions
+const width = canvas.width;
+const height = canvas.height;
+const heartPathStr = 'M23.6,0c-3.4,0-6.3,2.7-7.6,5.2C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4 c0,9.4,16,21.2,16,21.2s16-11.8,16-21.2C32,3.8,28.2,0,23.6,0z';
+const scale = 8;
+const heartWidth = 32;
+const heartHeight = 29.6;
+const heartCenterX = 16;
+const heartCenterY = 14;
+const centerX = width / 2;
+const centerY = height / 2;
+const qrSize = 100;
+
+async function drawHeartAndQRCode(url) {
+    ctx.clearRect(0, 0, width, height);
+    
+    // Load and draw heart background
+    const heartImg = new Image();
+    heartImg.src = './assets/heart1.png';
+    await new Promise((resolve, reject) => {
+        heartImg.onload = resolve;
+        heartImg.onerror = reject;
+    });
+    
+    const heartX = centerX - 128;
+    const heartY = centerY - 118;
+    ctx.drawImage(heartImg, heartX, heartY, 256, 236);
+    
+    // Generate and draw QR code
+    try {
+        const qrCanvas = document.createElement('canvas');
+        qrCanvas.width = qrSize;
+        qrCanvas.height = qrSize;
+        
+        await QRCode.toCanvas(qrCanvas, url, {
+            width: qrSize,
+            margin: 1,
+            color: {
+                dark: '#ff7094',
+                light: '#ffffff'
+            }
+        });
+        
+        const qrX = centerX - qrSize / 2;
+        const qrY = centerY - qrSize / 2;
+        ctx.drawImage(qrCanvas, qrX, qrY, qrSize, qrSize);
+    } catch (error) {
+        console.error('Lỗi tạo QR code:', error);
+    }
+}
+
+// Download button
+const downloadBtn = document.getElementById('downloadBtn');
+downloadBtn.addEventListener('click', function() {
+    const dataURL = canvas.toDataURL('image/png');
+    const link = document.createElement('a');
+    link.href = dataURL;
+    link.download = 'anh_qr_traitim.png';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+});
+
+// Image upload functionality
+const uploadInput = document.getElementById('upload-imgbb');
+const textarea = document.getElementById('imageLinks');
+const encody = 'YTI0NTMxMjYyYmYxN2Y2M2EzZmFkNmJlZDNlM2Y4MDg=';
+const APY = atob(encody);
+
+uploadInput.addEventListener('change', async (event) => {
+    const files = event.target.files;
+    if (files.length) {
+        for (const file of files) {
+            const formData = new FormData();
+            formData.append('image', file);
+            
+            try {
+                const response = await fetch('https://api.imgbb.com/1/upload?key=' + APY, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+                if (result.success) {
+                    const imageUrl = result.data.url;
+                    textarea.value += imageUrl + '\n';
+                } else {
+                    alert('Upload ảnh thất bại: ' + result.error.message);
+                }
+            } catch (error) {
+                alert('Lỗi khi upload ảnh: ' + error.message);
+            }
+        }
+        uploadInput.value = '';
+    }
+});
+
+// CAPTCHA system
+(() => {
+    const captchaPopup = document.getElementById('captcha-popup');
+    const captchaCode = document.getElementById('captcha-code');
+    const captchaInput = document.getElementById('captcha-input');
+    const captchaError = document.getElementById('captcha-error');
+    const captchaSubmit = document.getElementById('captcha-submit');
+    const refreshCaptcha = document.getElementById('refresh-captcha');
+    const uploadButton = document.getElementById('upload-imgbb');
+    const uploadLabel = document.querySelector('label[for="upload-imgbb"]');
+    
+    captchaPopup.addEventListener('click', (event) => {
+        if (event.target === captchaPopup) {
+            captchaPopup.style.display = 'none';
+        }
+    });
+    
+    let currentCaptcha = '';
+    
+    function generateCaptcha() {
+        currentCaptcha = (function(length = 5) {
+            const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                result += chars.charAt(Math.floor(55 * Math.random()));
+            }
+            return result;
+        })();
+        
+        captchaCode.textContent = currentCaptcha;
+        captchaInput.value = '';
+        captchaError.textContent = '';
+    }
+    
+    uploadLabel.addEventListener('click', (event) => {
+        event.preventDefault();
+        generateCaptcha();
+        captchaPopup.style.display = 'flex';
+        captchaInput.focus();
+    });
+    
+    refreshCaptcha.addEventListener('click', () => {
+        generateCaptcha();
+        captchaInput.focus();
+    });
+    
+    captchaSubmit.addEventListener('click', () => {
+        const userInput = captchaInput.value.trim();
+        
+        if (userInput !== '') {
+            if (userInput === currentCaptcha) {
+                captchaError.textContent = '';
+                captchaPopup.style.display = 'none';
+                uploadButton.click();
+            } else {
+                captchaError.textContent = 'Mã CAPTCHA không đúng, vui lòng thử lại.';
+                captchaInput.focus();
+            }
+        } else {
+            captchaError.textContent = 'Vui lòng nhập CAPTCHA';
+        }
+    });
+    
+    captchaInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            captchaSubmit.click();
+        }
+    });
+    
+    uploadButton.addEventListener('change', () => {
+        captchaPopup.style.display = 'none';
+    });
+})();
+
+// Error handling image
+const img = new Image();
+img.src = 'https://github.com/Panbap/anh/blob/main/error/htbt1.png?raw=true';
+img.style.display = 'none';
+
+img.onload = () => {
+    img.style.display = 'block';
+    img.style.maxWidth = '100%';
+    img.style.height = 'auto';
+};
+
+img.onerror = () => {
+    console.warn('Ảnh lỗi, hiển thị thông báo bảo trì...');
+    
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        (function() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(20, 20, 20, 0.97)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 48px Arial, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            const text = 'Hệ thống đang cập nhật';
+            const maxWidth = 0.8 * canvas.width;
+            const lineHeight = 60;
+            const y = canvas.height / 2 - lineHeight / 2;
+            
+            function wrapText(context, text, x, y, maxWidth, lineHeight) {
+                const words = text.split(' ');
+                let line = '';
+                const lines = [];
+                
+                for (let n = 0; n < words.length; n++) {
+                    const testLine = line + words[n] + ' ';
+                    if (context.measureText(testLine).width > maxWidth && n > 0) {
+                        lines.push(line.trim());
+                        line = words[n] + ' ';
+                    } else {
+                        line = testLine;
+                    }
+                }
+                lines.push(line.trim());
+                
+                lines.forEach((line, index) => {
+                    context.fillText(line, x, y + index * lineHeight);
+                });
+            }
+            
+            wrapText(ctx, text, canvas.width / 2, y, maxWidth, lineHeight);
+        })();
+    }
+    
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    
+    Object.assign(canvas.style, {
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100vw',
+        height: '100vh',
+        zIndex: 9999,
+        pointerEvents: 'auto'
+    });
+    
+    document.body.appendChild(canvas);
+};
