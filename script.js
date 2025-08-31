@@ -776,7 +776,7 @@ function updateShareLink(textLines, imageLinks, music) {
     
     const jsonString = JSON.stringify(data);
     const encodedData = encodeData(jsonString);
-    const url = new URL(location.origin + '/Textlove/index.html');
+    const url = new URL(location.origin + '/loinhan.html');
     url.hash = 'id=' + encodedData;
     
     shareLinkEl.href = url.toString();
@@ -1047,7 +1047,7 @@ async function drawHeartAndQRCode(url) {
     
     // Load and draw heart background
     const heartImg = new Image();
-    heartImg.src = './assets/heart1.png';
+    heartImg.src = 'https://files.catbox.moe/67t2w7.webp';
     await new Promise((resolve, reject) => {
         heartImg.onload = resolve;
         heartImg.onerror = reject;
