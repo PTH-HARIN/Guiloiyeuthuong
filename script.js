@@ -1,7 +1,7 @@
 
-// Decoded version of hh.js
-// This appears to be a 3D heart animation with text and QR code generation
+// Deobfuscated version of script.js
 
+// Add CSS styles
 const style = document.createElement('style');
 style.textContent = `
         html,
@@ -238,7 +238,7 @@ style.textContent = `
             z-index: 9999;
         }
 
-        #captcha-popup>div {
+        #captcha-popup > div {
             background: white;
             padding: 25px 30px;
             border-radius: 10px;
@@ -313,7 +313,6 @@ style.textContent = `
             flex-direction: column;
         }
 
-        /* Donate Button */
         #donateBtn {
             font-family: "Playpen Sans", cursive;
             padding: 10px 24px;
@@ -337,17 +336,15 @@ style.textContent = `
             box-shadow: 0 6px 15px rgba(232, 92, 122, 0.7);
         }
 `;
-
 document.head.appendChild(style);
 
-// Donate modal elements
+// Donate functionality
 const donateBtn = document.getElementById('donateBtn');
 const donateModal = document.getElementById('donateModal');
 const closeDonateModal = document.getElementById('closeDonateModal');
 const donateQRImg = document.getElementById('donateQRImg');
-const qrDonateLink = 'https://files.catbox.moe/gt5se9.png';
+const qrDonateLink = 'https://github.com/Panbap/anh/blob/main/qr1.png?raw=true';
 
-// Donate button event handlers
 donateBtn.addEventListener('click', () => {
     donateQRImg.src = qrDonateLink;
     donateModal.style.display = 'flex';
@@ -357,38 +354,32 @@ closeDonateModal.addEventListener('click', () => {
     donateModal.style.display = 'none';
 });
 
-donateModal.addEventListener('click', (event) => {
+donateModal.addEventListener('click', event => {
     if (event.target === donateModal) {
         donateModal.style.display = 'none';
     }
 });
 
 // Set placeholder text
-document.getElementById('imageLinks').placeholder = 'Ví dụ:\nhttps://example.com/image1.png\nhttps://example.com/image2.png\nNhập 1 chữ bất kỳ để bỏ qua ảnh';
+document.getElementById('imageLinks').placeholder = 'Ví dụ:\nhttps://panbap/image1.png\nhttps://panbap/image2.png\nNhập 1 chữ bất kỳ để bỏ qua ảnh';
 
-// Data encoding/decoding functions
-const encodeData = (data) => btoa(encodeURIComponent(data).replace(/%(\w{2})/g, (match, hex) => String.fromCharCode('0x' + hex))).replace(/[+/=]/g, char => ({'+': '-', '/': '_', '=': ''}[char] || ''));
+// Encoding and decoding functions for URL sharing
+const encodeData = data => btoa(encodeURIComponent(data).replace(/%(\w{2})/g, (match, hex) => String.fromCharCode('0x' + hex))).replace(/[+/=]/g, char => ({'+': '-', '/': '_', '=': ''}[char] || ''));
 
-const decodeData = (encodedData) => {
-    // Replace URL-safe characters back
-    encodedData = encodedData.replace(/[-_]/g, char => ({'-': '+', '_': '/'}[char]));
-    
-    // Add padding if needed
-    while (encodedData.length % 4) {
-        encodedData += '=';
-    }
-    
-    return decodeURIComponent(atob(encodedData).split('').map(char => '%' + char.charCodeAt(0).toString(16).padStart(2, '0')).join(''));
+const decodeData = str => {
+    str = str.replace(/[-_]/g, char => ({'-': '+', '_': '/'}[char]));
+    while (str.length % 4) str += '=';
+    return decodeURIComponent(atob(str).split('').map(char => '%' + char.charCodeAt(0).toString(16).padStart(2, '0')).join(''));
 };
 
-// Get data from URL hash
+// Get data from URL
 function getDataFromURL() {
     if (location.hash.startsWith('#id=')) {
-        const encodedData = location.hash.slice(4);
-        const decodedData = decodeData(encodedData);
-        if (decodedData) {
+        const encoded = location.hash.slice(4);
+        const decoded = decodeData(encoded);
+        if (decoded) {
             try {
-                return JSON.parse(decodedData);
+                return JSON.parse(decoded);
             } catch (error) {
                 console.error('JSON parse error:', error);
                 return null;
@@ -398,7 +389,7 @@ function getDataFromURL() {
     return null;
 }
 
-// DOM elements
+// Get DOM elements
 const inputTextEl = document.getElementById('inputText');
 const imageLinksEl = document.getElementById('imageLinks');
 const startBtn = document.getElementById('startBtn');
@@ -418,7 +409,6 @@ function waitUserToStartMusic(musicUrl) {
         document.removeEventListener('click', startMusic);
         document.removeEventListener('touchstart', startMusic);
     };
-    
     document.addEventListener('click', startMusic);
     document.addEventListener('touchstart', startMusic);
 }
@@ -428,7 +418,6 @@ function playMusic(musicUrl) {
         audio.pause();
         audio = null;
     }
-    
     if (musicUrl) {
         audio = new Audio(musicUrl);
         audio.loop = true;
@@ -450,14 +439,14 @@ function updateURLParam(param, value) {
     window.history.replaceState({}, '', url);
 }
 
-// Music selector event
+// Music selector event listener
 musicSelector.addEventListener('change', () => {
     const selectedMusic = musicSelector.value;
     updateURLParam('music', selectedMusic);
     playMusic(selectedMusic);
 });
 
-// Load music from URL on page load
+// Load music on page load
 window.addEventListener('load', () => {
     const urlData = getDataFromURL();
     if (urlData && urlData.music) {
@@ -466,7 +455,7 @@ window.addEventListener('load', () => {
     }
 });
 
-// Three.js scene setup
+// Three.js setup
 let images = [];
 let textLines = [];
 
@@ -484,65 +473,49 @@ const starGeo = new THREE.BufferGeometry();
 const starCount = 800;
 const starPos = [];
 
-for (let i = 0; i < starCount; i++) {
+for (let i = 0; i < 800; i++) {
     const radius = THREE.MathUtils.randFloat(900, 1200);
-    const u = Math.acos(THREE.MathUtils.randFloat(2));
-    const v = THREE.MathUtils.randFloat(2 * Math.PI);
+    const theta = Math.acos(THREE.MathUtils.randFloatSpread(2));
+    const phi = THREE.MathUtils.randFloat(2 * Math.PI);
     
     starPos.push(
-        radius * Math.sin(u) * Math.cos(v),
-        radius * Math.sin(u) * Math.sin(v),
-        radius * Math.cos(u)
+        radius * Math.sin(theta) * Math.cos(phi),
+        radius * Math.sin(theta) * Math.sin(phi),
+        radius * Math.cos(theta)
     );
 }
 
 starGeo.setAttribute('position', new THREE.Float32BufferAttribute(starPos, 3));
-
-const starsMat = new THREE.PointsMaterial({
-    color: 0xffffff,
-    size: 5,
-    transparent: true,
-    opacity: 0.9
-});
-
+const starsMat = new THREE.PointsMaterial({color: 0xffffff, size: 5, transparent: true, opacity: 0.9});
 scene.add(new THREE.Points(starGeo, starsMat));
 
-// Store star positions for shooting stars
+// Store star positions
 const starPositions = [];
-for (let i = 0; i < starCount; i++) {
-    starPositions.push(new THREE.Vector3(starPos[3*i], starPos[3*i+1], starPos[3*i+2]));
+for (let i = 0; i < 800; i++) {
+    starPositions.push(new THREE.Vector3(starPos[3 * i], starPos[3 * i + 1], starPos[3 * i + 2]));
 }
 
 // Create shooting stars
 const shootingStars = [];
 const shootingStarCount = 5;
 
-for (let i = 0; i < shootingStarCount; i++) {
+for (let i = 0; i < 5; i++) {
     const geometry = new THREE.BufferGeometry();
-    const positions = new Float32Array(30); // 10 points * 3 coordinates
+    const positions = new Float32Array(30);
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     
-    const material = new THREE.LineBasicMaterial({
-        color: 0xffffff,
-        transparent: true,
-        opacity: 0.9
-    });
-    
+    const material = new THREE.LineBasicMaterial({color: 0xffffff, transparent: true, opacity: 0.9});
     const line = new THREE.Line(geometry, material);
+    
     const pos = new THREE.Vector3(
         THREE.MathUtils.randFloatSpread(1000),
         THREE.MathUtils.randFloat(400, 700),
-        THREE.MathUtils.randFloat(1000)
+        THREE.MathUtils.randFloatSpread(1000)
     );
+    
     const velocity = new THREE.Vector3(0.8, -1, 0.2).normalize().multiplyScalar(5 + 5 * Math.random());
     
-    shootingStars.push({
-        line: line,
-        positions: positions,
-        pos: pos,
-        velocity: velocity
-    });
-    
+    shootingStars.push({line, positions, pos, velocity});
     scene.add(line);
 }
 
@@ -550,64 +523,52 @@ for (let i = 0; i < shootingStarCount; i++) {
 const shootingStarsFromStars = [];
 const shootingStarCountFromStars = 30;
 
-for (let i = 0; i < shootingStarCountFromStars; i++) {
+for (let i = 0; i < 30; i++) {
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(30);
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     
-    const material = new THREE.LineBasicMaterial({
-        color: 0xffffff,
-        transparent: true,
-        opacity: 0.9
-    });
-    
+    const material = new THREE.LineBasicMaterial({color: 0xffffff, transparent: true, opacity: 0.9});
     const line = new THREE.Line(geometry, material);
+    
     const randomIndex = Math.floor(Math.random() * starPositions.length);
     const pos = starPositions[randomIndex].clone();
-    const velocity = pos.clone().normalize().clone().add(new THREE.Vector3(
-        THREE.MathUtils.randFloatSpread(0.5),
-        THREE.MathUtils.randFloat(0.5),
-        THREE.MathUtils.randFloat(0.5)
-    )).normalize().multiplyScalar(5 + 5 * Math.random());
     
-    shootingStarsFromStars.push({
-        line: line,
-        positions: positions,
-        pos: pos,
-        velocity: velocity
-    });
+    const velocity = pos.clone().normalize().clone().add(
+        new THREE.Vector3(
+            THREE.MathUtils.randFloatSpread(0.5),
+            THREE.MathUtils.randFloatSpread(0.5),
+            THREE.MathUtils.randFloatSpread(0.5)
+        )
+    ).normalize().multiplyScalar(5 + 5 * Math.random());
     
+    shootingStarsFromStars.push({line, positions, pos, velocity});
     scene.add(line);
 }
 
-// Reset images array
-images = [];
-
+// Three.js group and arrays
 const textureLoader = new THREE.TextureLoader();
 const group = new THREE.Group();
 
-// Helper function to get random position on sphere
+// Helper functions
 function randomPosOnSphere(radius) {
-    const u = Math.acos(THREE.MathUtils.randFloat(2));
-    const v = THREE.MathUtils.randFloat(2 * Math.PI);
-    
+    const theta = Math.acos(THREE.MathUtils.randFloatSpread(2));
+    const phi = THREE.MathUtils.randFloat(2 * Math.PI);
     return new THREE.Vector3(
-        radius * Math.sin(u) * Math.cos(v),
-        radius * Math.sin(u) * Math.sin(v),
-        radius * Math.cos(u)
+        radius * Math.sin(theta) * Math.cos(phi),
+        radius * Math.sin(theta) * Math.sin(phi),
+        radius * Math.cos(theta)
     );
 }
 
-// Create text sprite function
 function createTextSprite(text) {
     const canvas = document.createElement('canvas');
     canvas.width = 512;
     canvas.height = 128;
-    
     const context = canvas.getContext('2d');
+    
     const colors = ['#ff8690', '#76b776', '#63c7c7'];
     const strokeColors = ['#cfd8dc', '#cfd8dc', '#cfd8dc'];
-    
     let colorIndex = 0;
     
     const texture = new THREE.CanvasTexture(canvas);
@@ -638,13 +599,11 @@ function createTextSprite(text) {
     sprite.scale.set(150, 40, 1);
     updateCanvas();
     
-    // Change color every 10 seconds
     setInterval(() => {
         colorIndex = (colorIndex + 1) % colors.length;
         updateCanvas();
     }, 10000);
     
-    // Load font and update canvas
     document.fonts.load('48px Playpen Sans').then(() => {
         updateCanvas();
     });
@@ -654,7 +613,7 @@ function createTextSprite(text) {
 
 scene.add(group);
 
-// Arrays to store objects
+// Scene setup variables
 const planes = [];
 const labels = [];
 const imagePositions = [];
@@ -663,65 +622,62 @@ const boxCount = 50;
 const radiusImage = 400;
 const radiusText = 600;
 
-// Initialize scene function
+// Initialize scene
 function initScene() {
-    // Clear existing objects
     group.clear();
     planes.length = 0;
     labels.length = 0;
     imagePositions.length = 0;
     textPositions.length = 0;
     
-    if (images.length === 0 && textLines.length === 0) return;
-    
-    // Create image planes
-    for (let i = 0; i < boxCount; i++) {
-        const size = 20 + 10 * Math.random();
-        const geometry = new THREE.PlaneGeometry(size, size);
+    if (images.length !== 0 && textLines.length !== 0) {
+        // Create image planes
+        for (let i = 0; i < boxCount; i++) {
+            const size = 20 + 10 * Math.random();
+            const geometry = new THREE.PlaneGeometry(size, size);
+            
+            const texture = textureLoader.load(images[i % images.length], loadedTexture => {
+                loadedTexture.minFilter = THREE.LinearMipMapLinearFilter;
+                loadedTexture.magFilter = THREE.LinearFilter;
+                loadedTexture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+            });
+            
+            const material = new THREE.MeshBasicMaterial({map: texture, transparent: true});
+            const plane = new THREE.Mesh(geometry, material);
+            
+            const position = randomPosOnSphere(radiusImage);
+            imagePositions.push(position);
+            
+            plane.position.set(0, 0, 0);
+            plane.scale.set(0.05, 0.05, 0.05);
+            plane.userData = {
+                progress: 0,
+                speed: 0.0005 + 0.001 * Math.random(),
+                delayOffset: 0.02 * i
+            };
+            
+            group.add(plane);
+            planes.push(plane);
+        }
         
-        const texture = textureLoader.load(images[i % images.length], (loadedTexture) => {
-            loadedTexture.minFilter = THREE.LinearMipMapLinearFilter;
-            loadedTexture.magFilter = THREE.LinearFilter;
-            loadedTexture.anisotropy = renderer.capabilities.getMaxAnisotropy();
-        });
-        
-        const material = new THREE.MeshBasicMaterial({
-            map: texture,
-            transparent: true
-        });
-        
-        const mesh = new THREE.Mesh(geometry, material);
-        const position = randomPosOnSphere(radiusImage);
-        
-        imagePositions.push(position);
-        mesh.position.set(0, 0, 0);
-        mesh.scale.set(0.05, 0.05, 0.05);
-        mesh.userData = {
-            progress: 0,
-            speed: 0.0005 + 0.001 * Math.random(),
-            delayOffset: 0.02 * i
-        };
-        
-        group.add(mesh);
-        planes.push(mesh);
-    }
-    
-    // Create text labels
-    for (let i = 0; i < 2 * boxCount; i++) {
-        const textSprite = createTextSprite(textLines[i % textLines.length]);
-        const position = randomPosOnSphere(radiusText);
-        
-        textPositions.push(position);
-        textSprite.position.set(0, 0, 0);
-        textSprite.scale.set(1.5, 0.4, 1);
-        textSprite.userData = {
-            progress: 0,
-            speed: 0.0005 + 0.001 * Math.random(),
-            delayOffset: 0.02 * i
-        };
-        
-        scene.add(textSprite);
-        labels.push(textSprite);
+        // Create text sprites
+        for (let i = 0; i < 2 * boxCount; i++) {
+            const textSprite = createTextSprite(textLines[i % textLines.length]);
+            const position = randomPosOnSphere(radiusText);
+            
+            textPositions.push(position);
+            
+            textSprite.position.set(0, 0, 0);
+            textSprite.scale.set(1.5, 0.4, 1);
+            textSprite.userData = {
+                progress: 0,
+                speed: 0.0005 + 0.001 * Math.random(),
+                delayOffset: 0.02 * i
+            };
+            
+            scene.add(textSprite);
+            labels.push(textSprite);
+        }
     }
 }
 
@@ -729,11 +685,11 @@ function initScene() {
 function updateLabelText(index, newText) {
     if (index < 0 || index >= labels.length) return;
     
-    const existingLabel = labels[index];
-    if (existingLabel) {
-        scene.remove(existingLabel);
-        existingLabel.material.map.dispose();
-        existingLabel.material.dispose();
+    const oldLabel = labels[index];
+    if (oldLabel) {
+        scene.remove(oldLabel);
+        oldLabel.material.map.dispose();
+        oldLabel.material.dispose();
     }
     
     if (newText.trim() === '') {
@@ -749,14 +705,14 @@ function updateLabelText(index, newText) {
 
 initScene();
 
-// Mouse/touch interaction variables
+// Mouse interaction
 let targetRotX = 0;
 let targetRotY = 0;
 let currentRotX = 0;
 let currentRotY = 0;
 
-const maxRotX = Math.PI / 180 * 90; // 90 degrees
-const maxRotY = 2 * Math.PI; // 360 degrees
+const maxRotX = Math.PI / 180 * 90;
+const maxRotY = 2 * Math.PI;
 
 function updateTargetRotation(mouseX, mouseY) {
     const normalizedX = (mouseX / window.innerWidth) * 2 - 1;
@@ -768,16 +724,11 @@ function updateTargetRotation(mouseX, mouseY) {
 
 // Share link function
 function updateShareLink(textLines, imageLinks, music) {
-    const data = {
-        textLines: textLines,
-        imageLinks: imageLinks,
-        music: music
-    };
-    
+    const data = {textLines, imageLinks, music};
     const jsonString = JSON.stringify(data);
-    const encodedData = encodeData(jsonString);
-    const url = new URL(location.origin + '/loinhan.html');
-    url.hash = 'id=' + encodedData;
+    const encoded = encodeData(jsonString);
+    const url = new URL(location.origin + '/Textlove/index.html');
+    url.hash = 'id=' + encoded;
     
     shareLinkEl.href = url.toString();
     shareLinkEl.textContent = url.toString();
@@ -827,7 +778,7 @@ function loadFromURL() {
 function animate() {
     requestAnimationFrame(animate);
     
-    // Smooth camera rotation
+    // Update camera rotation
     currentRotX += 0.005 * (targetRotX - currentRotX);
     currentRotY += 0.005 * (targetRotY - currentRotY);
     
@@ -837,9 +788,9 @@ function animate() {
     camera.position.z = 600 * Math.cos(currentRotY) * Math.cos(currentRotX);
     camera.lookAt(0, 0, 0);
     
-    const fallDistance = 1000;
+    const fallHeight = 1000;
     
-    // Make planes face camera
+    // Update planes to always face camera
     planes.forEach(plane => {
         plane.lookAt(camera.position);
     });
@@ -852,7 +803,7 @@ function animate() {
         
         const startPos = imagePositions[index].clone();
         startPos.y -= 400;
-        const endPos = new THREE.Vector3(startPos.x, fallDistance, startPos.z);
+        const endPos = new THREE.Vector3(startPos.x, fallHeight, startPos.z);
         
         plane.position.lerpVectors(endPos, startPos, progress);
         
@@ -866,13 +817,13 @@ function animate() {
             plane.userData.progress = 0;
         }
         
-        // Update corresponding labels
+        // Update corresponding text labels
         const label1 = labels[2 * index];
         if (label1) {
             label1.visible = progress > 0.05;
             const labelStartPos = textPositions[2 * index].clone();
             labelStartPos.y -= 400;
-            const labelEndPos = new THREE.Vector3(labelStartPos.x, fallDistance, labelStartPos.z);
+            const labelEndPos = new THREE.Vector3(labelStartPos.x, fallHeight, labelStartPos.z);
             label1.position.lerpVectors(labelEndPos, labelStartPos, progress);
         }
         
@@ -881,7 +832,7 @@ function animate() {
             label2.visible = progress > 0.05;
             const labelStartPos = textPositions[2 * index + 1].clone();
             labelStartPos.y -= 400;
-            const labelEndPos = new THREE.Vector3(labelStartPos.x, fallDistance, labelStartPos.z);
+            const labelEndPos = new THREE.Vector3(labelStartPos.x, fallHeight, labelStartPos.z);
             label2.position.lerpVectors(labelEndPos, labelStartPos, progress);
         }
     });
@@ -901,14 +852,14 @@ function animate() {
         
         if (star.pos.y < -500) {
             star.pos.set(
-                THREE.MathUtils.randFloat(1000),
+                THREE.MathUtils.randFloatSpread(1000),
                 THREE.MathUtils.randFloat(400, 700),
-                THREE.MathUtils.randFloat(1000)
+                THREE.MathUtils.randFloatSpread(1000)
             );
         }
     });
     
-    // Animate shooting stars from stars
+    // Animate shooting stars from existing stars
     shootingStarsFromStars.forEach(star => {
         star.pos.add(star.velocity);
         
@@ -924,12 +875,17 @@ function animate() {
         if (star.pos.length() > 1300) {
             const randomIndex = Math.floor(Math.random() * starPositions.length);
             star.pos.copy(starPositions[randomIndex]);
+            
             const direction = star.pos.clone().normalize();
-            star.velocity.copy(direction.add(new THREE.Vector3(
-                THREE.MathUtils.randFloat(0.5),
-                THREE.MathUtils.randFloat(0.5),
-                THREE.MathUtils.randFloat(0.5)
-            )).normalize().multiplyScalar(5 + 5 * Math.random()));
+            star.velocity.copy(
+                direction.add(
+                    new THREE.Vector3(
+                        THREE.MathUtils.randFloatSpread(0.5),
+                        THREE.MathUtils.randFloatSpread(0.5),
+                        THREE.MathUtils.randFloatSpread(0.5)
+                    )
+                ).normalize().multiplyScalar(5 + 5 * Math.random())
+            );
         }
     });
     
@@ -937,18 +893,18 @@ function animate() {
 }
 
 // Event listeners
-window.addEventListener('mousemove', (event) => {
+window.addEventListener('mousemove', event => {
     updateTargetRotation(event.clientX, event.clientY);
 });
 
-window.addEventListener('touchmove', (event) => {
+window.addEventListener('touchmove', event => {
     if (event.touches.length > 0) {
         const touch = event.touches[0];
         updateTargetRotation(touch.clientX, touch.clientY);
     }
 }, {passive: true});
 
-// Start button event
+// Start button functionality
 startBtn.addEventListener('click', () => {
     const inputText = inputTextEl.value.trim();
     const imageLinks = imageLinksEl.value.trim();
@@ -971,7 +927,7 @@ startBtn.addEventListener('click', () => {
     
     initScene();
     
-    // Update text labels
+    // Update labels
     for (let i = 0; i < planes.length; i++) {
         let text = '';
         if (textLines.length > 0) {
@@ -980,39 +936,33 @@ startBtn.addEventListener('click', () => {
         updateLabelText(i, text);
     }
     
-    // Start music if not already playing
+    // Play music if not already playing
     if (!audio && musicSelector.value) {
         playMusic(musicSelector.value);
     }
     
-    // Create and update share link
-    const data = {
-        textLines: textLines,
-        imageLinks: images,
-        music: selectedMusic
-    };
-    
-    const jsonString = JSON.stringify(data);
-    const encodedData = encodeData(jsonString);
-    const url = new URL(location.origin + '/loinhan.html');
-    url.hash = 'id=' + encodedData;
+    // Update share link
+    const shareData = {textLines, imageLinks: images, music: selectedMusic};
+    const jsonString = JSON.stringify(shareData);
+    const encoded = encodeData(jsonString);
+    const shareUrl = new URL(location.origin + '/Textlove/index.html');
+    shareUrl.hash = 'id=' + encoded;
     
     shareLinkEl.style.display = 'none';
     document.getElementById('loading-screen').style.display = 'block';
     
     setTimeout(() => {
-        shareLinkEl.href = url.toString();
-        shareLinkEl.textContent = url.toString();
+        shareLinkEl.href = shareUrl.toString();
+        shareLinkEl.textContent = shareUrl.toString();
         shareLinkEl.title = 'Click để mở link trong tab mới';
         shareLinkEl.style.display = 'inline-block';
         document.getElementById('loading-screen').style.display = 'none';
     }, 10000);
 });
 
-// Start animation
 animate();
 
-// Load from URL if available, otherwise show UI
+// Load from URL on page load
 if (loadFromURL()) {
     document.getElementById('ui').style.display = 'none';
 } else {
@@ -1026,10 +976,19 @@ window.addEventListener('resize', () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-// QR button functionality and other features...
-// [The rest of the code continues with QR generation, image upload, captcha, etc.]
+// QR button functionality
+qrBtn.addEventListener('click', async () => {
+    if (!shareLinkEl.textContent || shareLinkEl.style.display === 'none') {
+        alert('Chưa có link để tạo QR! Vui lòng tạo link trước.');
+        return;
+    }
+    
+    const shareUrl = shareLinkEl.href;
+    heartFrame.style.display = 'block';
+    await drawHeartAndQRCode(shareUrl);
+});
 
-// Heart and QR code drawing functions
+// Canvas and QR code generation
 const width = canvas.width;
 const height = canvas.height;
 const heartPathStr = 'M23.6,0c-3.4,0-6.3,2.7-7.6,5.2C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4 c0,9.4,16,21.2,16,21.2s16-11.8,16-21.2C32,3.8,28.2,0,23.6,0z';
@@ -1045,14 +1004,15 @@ const qrSize = 100;
 async function drawHeartAndQRCode(url) {
     ctx.clearRect(0, 0, width, height);
     
-    // Load and draw heart background
+    // Load heart image
     const heartImg = new Image();
-    heartImg.src = 'http://dkupload.site/uploads/files-1756619473480-231940394.png';
+    heartImg.src = './assets/heart1.png';
     await new Promise((resolve, reject) => {
         heartImg.onload = resolve;
         heartImg.onerror = reject;
     });
     
+    // Draw heart
     const heartX = centerX - 128;
     const heartY = centerY - 118;
     ctx.drawImage(heartImg, heartX, heartY, 256, 236);
@@ -1067,7 +1027,7 @@ async function drawHeartAndQRCode(url) {
             width: qrSize,
             margin: 1,
             color: {
-                dark: '#ff7094',
+                dark: '#000000',
                 light: '#ffffff'
             }
         });
@@ -1080,7 +1040,7 @@ async function drawHeartAndQRCode(url) {
     }
 }
 
-// Download button
+// Download button functionality
 const downloadBtn = document.getElementById('downloadBtn');
 downloadBtn.addEventListener('click', function() {
     const dataURL = canvas.toDataURL('image/png');
@@ -1092,13 +1052,13 @@ downloadBtn.addEventListener('click', function() {
     document.body.removeChild(link);
 });
 
-// Image upload functionality
+// File upload functionality
 const uploadInput = document.getElementById('upload-imgbb');
 const textarea = document.getElementById('imageLinks');
 const encody = 'YTI0NTMxMjYyYmYxN2Y2M2EzZmFkNmJlZDNlM2Y4MDg=';
-const APY = atob(encody);
+const APY = atob(encody); // Decode API key
 
-uploadInput.addEventListener('change', async (event) => {
+uploadInput.addEventListener('change', async event => {
     const files = event.target.files;
     if (files.length) {
         for (const file of files) {
@@ -1126,18 +1086,18 @@ uploadInput.addEventListener('change', async (event) => {
     }
 });
 
-// CAPTCHA system
+// CAPTCHA functionality
 (() => {
     const captchaPopup = document.getElementById('captcha-popup');
     const captchaCode = document.getElementById('captcha-code');
     const captchaInput = document.getElementById('captcha-input');
-    const captchaError = document.getElementById('captcha-error');
     const captchaSubmit = document.getElementById('captcha-submit');
+    const captchaError = document.getElementById('captcha-error');
     const refreshCaptcha = document.getElementById('refresh-captcha');
-    const uploadButton = document.getElementById('upload-imgbb');
+    const uploadInputBtn = document.getElementById('upload-imgbb');
     const uploadLabel = document.querySelector('label[for="upload-imgbb"]');
     
-    captchaPopup.addEventListener('click', (event) => {
+    captchaPopup.addEventListener('click', event => {
         if (event.target === captchaPopup) {
             captchaPopup.style.display = 'none';
         }
@@ -1146,21 +1106,17 @@ uploadInput.addEventListener('change', async (event) => {
     let currentCaptcha = '';
     
     function generateCaptcha() {
-        currentCaptcha = (function(length = 5) {
-            const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
-            let result = '';
-            for (let i = 0; i < length; i++) {
-                result += chars.charAt(Math.floor(55 * Math.random()));
-            }
-            return result;
-        })();
-        
+        const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
+        currentCaptcha = '';
+        for (let i = 0; i < 5; i++) {
+            currentCaptcha += chars.charAt(Math.floor(55 * Math.random()));
+        }
         captchaCode.textContent = currentCaptcha;
         captchaInput.value = '';
         captchaError.textContent = '';
     }
     
-    uploadLabel.addEventListener('click', (event) => {
+    uploadLabel.addEventListener('click', event => {
         event.preventDefault();
         generateCaptcha();
         captchaPopup.style.display = 'flex';
@@ -1174,12 +1130,11 @@ uploadInput.addEventListener('change', async (event) => {
     
     captchaSubmit.addEventListener('click', () => {
         const userInput = captchaInput.value.trim();
-        
         if (userInput !== '') {
             if (userInput === currentCaptcha) {
                 captchaError.textContent = '';
                 captchaPopup.style.display = 'none';
-                uploadButton.click();
+                uploadInputBtn.click();
             } else {
                 captchaError.textContent = 'Mã CAPTCHA không đúng, vui lòng thử lại.';
                 captchaInput.focus();
@@ -1189,14 +1144,14 @@ uploadInput.addEventListener('change', async (event) => {
         }
     });
     
-    captchaInput.addEventListener('keydown', (event) => {
+    captchaInput.addEventListener('keydown', event => {
         if (event.key === 'Enter') {
             event.preventDefault();
             captchaSubmit.click();
         }
     });
     
-    uploadButton.addEventListener('change', () => {
+    uploadInputBtn.addEventListener('change', () => {
         captchaPopup.style.display = 'none';
     });
 })();
@@ -1218,52 +1173,51 @@ img.onerror = () => {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     
-    function resizeCanvas() {
+    function setupMaintenanceScreen() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         
-        (function() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = 'rgba(20, 20, 20, 0.97)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        // Draw maintenance message
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'rgba(20, 20, 20, 0.97)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 48px Arial, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        
+        const message = 'Hệ thống đang cập nhật';
+        const maxWidth = 0.8 * canvas.width;
+        const lineHeight = 60;
+        const y = canvas.height / 2 - lineHeight / 2;
+        
+        // Word wrapping function
+        function wrapText(context, text, x, y, maxWidth, lineHeight) {
+            const words = text.split(' ');
+            let line = '';
+            const lines = [];
             
-            ctx.fillStyle = '#ffffff';
-            ctx.font = 'bold 48px Arial, sans-serif';
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            
-            const text = 'Hệ thống đang cập nhật';
-            const maxWidth = 0.8 * canvas.width;
-            const lineHeight = 60;
-            const y = canvas.height / 2 - lineHeight / 2;
-            
-            function wrapText(context, text, x, y, maxWidth, lineHeight) {
-                const words = text.split(' ');
-                let line = '';
-                const lines = [];
-                
-                for (let n = 0; n < words.length; n++) {
-                    const testLine = line + words[n] + ' ';
-                    if (context.measureText(testLine).width > maxWidth && n > 0) {
-                        lines.push(line.trim());
-                        line = words[n] + ' ';
-                    } else {
-                        line = testLine;
-                    }
+            for (let i = 0; i < words.length; i++) {
+                const testLine = line + words[i] + ' ';
+                if (context.measureText(testLine).width > maxWidth && i > 0) {
+                    lines.push(line.trim());
+                    line = words[i] + ' ';
+                } else {
+                    line = testLine;
                 }
-                lines.push(line.trim());
-                
-                lines.forEach((line, index) => {
-                    context.fillText(line, x, y + index * lineHeight);
-                });
             }
+            lines.push(line.trim());
             
-            wrapText(ctx, text, canvas.width / 2, y, maxWidth, lineHeight);
-        })();
+            lines.forEach((line, index) => {
+                context.fillText(line, x, y + index * lineHeight);
+            });
+        }
+        
+        wrapText(ctx, message, canvas.width / 2, y, maxWidth, lineHeight);
     }
     
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
+    window.addEventListener('resize', setupMaintenanceScreen);
+    setupMaintenanceScreen();
     
     Object.assign(canvas.style, {
         position: 'fixed',
